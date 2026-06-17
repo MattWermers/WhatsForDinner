@@ -1,0 +1,20 @@
+/* Color Palette & Variables */
+/*These work with the imported functions I have made. Those come from my personal website.*/
+:root {
+    --color-bg: #0B131A;
+
+    --color-banner: #109648;
+    --color-banner-text: #0B131A;
+
+    --color-content: #484349;
+    --color-content-text: #F7F0F0;
+
+    --color-subcontent: #18A999;
+    --color-subcontent-primarytext: #0B131A;
+    --color-subcontent-secondarytext: #2A454B;
+    --color-subcontent-accentext: #F7F0F0;
+
+    --color-interactable: #8AF3FF;
+    --color-interactable-text: #0B131A;
+    --color-interactable-hover: #5CE1E6;
+}

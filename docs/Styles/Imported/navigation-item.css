@@ -26,13 +26,13 @@
 /* Faded divider lines to keep the design clean and uncluttered */
 #site-header .logo-divider {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.45); 
+    color: var(--color-banner-text); 
 }
 
 /* Secondary font size and color for the contacts to create hierarchy */
 #site-header a.logo-contact {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.85); /* Premium, high-contrast off-white */
+    font-size: 1.25rem;
+    color: var(--color-banner-text);
     font-weight: normal;
     text-decoration: underline;        /* Keep links underlined by default */
     transition: opacity 0.2s ease;

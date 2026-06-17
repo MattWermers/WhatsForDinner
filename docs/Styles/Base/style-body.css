@@ -1,5 +1,5 @@
 body {
-    background-color: var(--color-background);
+    background-color: var(--color-bg);
     margin: 0;
     font-family: 'Segoe UI';
 }
@@ -9,7 +9,7 @@ section {
     color: var(--color-content-text);
     padding: 1rem;
     margin: 1rem;
-    border-radius: 0.5px;
+    border-radius: 0.5rem;
 }
 
 footer {

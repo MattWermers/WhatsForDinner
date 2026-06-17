@@ -22,7 +22,7 @@
     top: 0;
     transform: translateY(-50%);
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0rem;
     
     /* Left-aligned, matching where the circular image/badge would sit */
     left: 2rem; 
