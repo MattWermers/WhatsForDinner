@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between; /* Logo on left, navigation on right */
     align-items: center;
-    border-bottom: 2px solid var(--color-subcontent);
+    border-bottom: 2px solid var(--color-bg);
 }
 
 /* Header logo and contact details container */
@@ -26,7 +26,7 @@
 /* Faded divider lines to keep the design clean and uncluttered */
 #site-header .logo-divider {
     font-size: 1.25rem;
-    color: var(--color-banner-text); 
+    color: var(--color-bg); 
 }
 
 /* Secondary font size and color for the contacts to create hierarchy */
