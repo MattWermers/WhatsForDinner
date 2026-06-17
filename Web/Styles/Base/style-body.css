@@ -1,0 +1,20 @@
+body {
+    background-color: var(--color-background);
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+
+section {
+    background-color: var(--color-content);
+    color: var(--color-content-text);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--color-banner-text);
+    font-size: 0.9rem;
+}

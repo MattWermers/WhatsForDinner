@@ -1,0 +1,41 @@
+/* Component: Content Card */
+.content-card {
+    position: relative;
+    background-color: var(--color-content);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 4rem 1rem 1rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    scroll-margin-top: 4.5rem; /* Stop scrolling early to keep floating title in view */
+}
+
+/* Clear vertical space for the absolute header overlapping the top border */
+.content-card .card-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem; /* Pushes content down to clear the absolute title box */
+}
+
+/* Style the absolute header box aligned to the left */
+.content-card .card-title {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    /* Left-aligned, matching where the circular image/badge would sit */
+    left: 2rem; 
+    
+    color: var(--color-content-text);
+    background-color: var(--color-content);
+    border: 3px solid var(--color-bg);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.content-card .card-body {
+    margin-top: 0.5rem;
+    color: var(--color-content-text);
+}

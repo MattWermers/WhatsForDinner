@@ -1,0 +1,21 @@
+/* Layout: Body with Sidebar */
+.bodywith-sidebar {
+    display: flex;
+    min-height: 100vh;
+}
+
+.bodywith-sidebar .bar {
+    width: 20%;
+    max-width: 200px;
+    flex-shrink: 0;
+    background-color: var(--color-accent-cream);
+}
+
+.bodywith-sidebar .body {
+    background-color: var(--color-bg);
+    flex-grow: 1;
+}
+
+.bodywith-sidebar .body #interior {
+    padding: 1rem;
+}

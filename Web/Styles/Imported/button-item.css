@@ -1,0 +1,26 @@
+/*
+Class for a simple button
+
+Usage
+    Params
+        --btn-bg        : Default background color
+        --btn-bg-hvr     : Background on hover
+        --btn-t          : Default text
+        --btn-t-hvr      : Text on hover
+    
+    You can set the colors and link with
+        <a href="#[destination]" class="button" style="[variable-name]: #[hex-color]; [variable-name]: #[hex-color];">[Button text]</a>
+*/
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: var(--btn-bg, var(--color-interactable));
+    color: var(--btn-t, var(--color-interactable-text));
+}
+
+.button:hover {
+    background-color: var(--btn-bg-hvr, var(--color-content-hover));
+    color: var(--btn-t-hvr, var(--color-interactable-text));
+}
