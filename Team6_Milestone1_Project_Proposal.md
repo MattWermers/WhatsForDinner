@@ -1,11 +1,11 @@
 # Milestone 1: Project Proposal
 
 ## Project Title
-**What’s for Dinner?**
+**Recpie Finder**
 
 ## Team Information
 - **Team Number:** 6  
-- **Team Name:** Team 6  
+- **Team Name/Product Title:** What's for Dinner 
 
 ### Team Members
 - **Zeke Buckholz** (GitHub: `ZekeBuckholz`, Email: zebu4871@colorado.edu)  
@@ -33,7 +33,6 @@ Many people struggle to use up their groceries before they spoil, whether it’s
 - **Scheduling and Coordination Challenges:** Team members are in different time zones, which may limit synchronous development time. Also Team members have different work schedules making it hard to coordinate meetings and tasks.
  
 - **Learning Curve with Full-Stack Integration:** Some team members have limited experience connecting frontend interfaces with backend APIs and databases.
-
 
 ---
 
