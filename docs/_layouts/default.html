@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Base/style-body.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Base/style-color.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/navigation-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/content-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/subcontent-item.css">
+</head>
+<body>
+    {% include header.html %}
+    {{ content }}
+</body>
+<footer>
+    <p>{{ page.title }}</p>
+</footer>

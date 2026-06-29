@@ -14,6 +14,8 @@ Web focuses on webpage tools and appearance. This domain includes HTML and CSS f
         - How is a webpage structured in code? What is a stylesheet, can I use many? How to make an interactable element? What are the different measurement REM, px, etc...
     - JavaScript
         - How do I send a web request? How is a variable handled by imbedded JavaScript? How do I handle the response data?
+    - Jekyll
+        - Pretty easy to use, allows easier management of layouts and testing. Requires a good install
 
 # Database
 This domain focuses on the hard infastructure of the database (which we will implement as via SQLite). This domain focuses on defining the database schema, rules, and functions as well as in populating the database.

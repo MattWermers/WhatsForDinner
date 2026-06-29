@@ -1,168 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="Styles/Base/style-color.css">
-        <link rel="stylesheet" href="Styles/Base/style-body.css">
-        <link rel="stylesheet" href="Styles/Imported/navigation-item.css">
-        <link rel="stylesheet" href="Styles/Imported/content-item.css">
-        <link rel="stylesheet" href="Styles/Imported/subcontent-item.css">
+---
+layout: default
+title: "WfD - Project Overview"
+---
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Whats for Dinner</title>
-    </head>
-
-    <body>
-        <header id="site-header">
-            <div class="logo">
-                <h1 class="logo-name">Team 6</h1>
-                <span class="logo-divider">|</span>
-                <p class="logo-description">Whats for Dinner</p>
-                <span class="logo-divider">|</span>
-                <a href="https://github.com/MattWermers/WhatsForDinner.git" class="logo-contact" title="View the source code for the project and this website.">GitHub</a>
-            </div>
-
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                        <div class="dropdown-menu">
-                            <a href="#project-description">Project description</a>
-                            <a href="team.html">The team</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section id="project-description">
-                    <section class="subcontent-card">
-                        <h2 class="card-title">Project Overview</h2>
-                        <div class="card-body">
-                            <div>
-                                <h3>Vision</h3>
-                                <p>What’s for Dinner is a web application that quickly finds recipes well-suited to ingredients users have on hand.  It combines user-provided input (ingredients and quantities) with required “kitchen staples” (salt, pepper, oil, etc.) to suggest possible recipes that can be prepared without a trip to the grocery store.</p>
-                            </div>
-                            <div>
-                                <h3>Motivation</h3>
-                                <p>Many students struggle to coordinate group work across different schedules, time zones, and course loads, often relying on fragmented tools like shared documents, group chats, and calendars. StudySync aims to simplify this process by providing a single, purpose-built platform that makes planning, accountability, and communication more transparent for student teams.</p>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="subcontent-card">
-                        <h2 class="card-title">Risk & Mitigation</h2>
-                        <div class="card-body">
-                            <div>
-                                <h3>Risks to completion</h3>
-                                <ul>
-                                    <li>
-                                        <h4><strong>Scheduling and Coordination Challenges</strong></h4>
-                                        <p>Team members are in different time zones, which may limit synchronous development time. Also Team members have different work schedules making it hard to coordinate.</p>
-                                    </li>
-                                    <li>
-                                        <h4><strong>Learning Curve with Full-Stack Integration</strong></h4>
-                                        <p>Some team members have limited experience connecting frontend interfaces with backend APIs and databases.</p>
-                                    </li>
-                                </ul>
-                            <div>
-                                <h3>Mitigation Strategies</h3>
-                                <ul>
-                                    <li>
-                                        <h4><strong>Availability Alignment</strong></h4>
-                                        <p>The team will rely on asynchronous communication tools and keep synchronous meetings focused and time-boxed in order to meet everyone's schedule. </p>
-                                    </li>
-                                    <li>
-                                        <h4><strong>Minimum Viable Product First</strong></h4>
-                                        <p>The initial goal will be a basic, functional product that allows for basic recipes to be output.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="subcontent-card">
-                        <h2 class="card-title">Development Plan</h2>
-                        <div class="card-body">
-                            <div>
-                                <h3>Development Methodology</h3>
-                                <p>The team will follow an Agile, sprint-based approach with weekly planning meetings, short development iterations, and continuous integration. Tasks will be broken into small, testable components, allowing the project to adapt based on progress and challenges.</p>
-                            </div>
-                            <div>
-                                <h3>Developmental Milestones</h3>
-                                <ol>
-                                    <li><strong>Define functional and pre-development requirements</strong>
-                                        <ol class="primary-list">
-                                            <li>Define user stories</li>
-                                            <li>Find targets for web scraping</li>
-                                            <li>Identify tools/APIs
-                                                <ol class="secondary-list">
-                                                    <li>What language will back end logic be in?</li>
-                                                    <li>How will we host the SQL server?</li>
-                                                    <li>How will we send the HTTP request and what will be at POST?</li>
-                                                </ol>
-                                            </li>
-                                            <li>Create project website</li>
+<main>
+    <section id="project-description">
+            <section class="subcontent-card">
+                <h2 class="card-title">Project Overview</h2>
+                <div class="card-body">
+                    <div>
+                        <h3>Vision</h3>
+                        <p>What’s for Dinner is a web application that quickly finds recipes well-suited to ingredients users have on hand.  It combines user-provided input (ingredients and quantities) with required “kitchen staples” (salt, pepper, oil, etc.) to suggest possible recipes that can be prepared without a trip to the grocery store.</p>
+                    </div>
+                    <div>
+                        <h3>Motivation</h3>
+                        <p>Many students struggle to coordinate group work across different schedules, time zones, and course loads, often relying on fragmented tools like shared documents, group chats, and calendars. StudySync aims to simplify this process by providing a single, purpose-built platform that makes planning, accountability, and communication more transparent for student teams.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="subcontent-card">
+                <h2 class="card-title">Risk & Mitigation</h2>
+                <div class="card-body">
+                    <div>
+                        <h3>Risks to completion</h3>
+                        <ul>
+                            <li>
+                                <h4><strong>Scheduling and Coordination Challenges</strong></h4>
+                                <p>Team members are in different time zones, which may limit synchronous development time. Also Team members have different work schedules making it hard to coordinate.</p>
+                            </li>
+                            <li>
+                                <h4><strong>Learning Curve with Full-Stack Integration</strong></h4>
+                                <p>Some team members have limited experience connecting frontend interfaces with backend APIs and databases.</p>
+                            </li>
+                        </ul>
+                    <div>
+                        <h3>Mitigation Strategies</h3>
+                        <ul>
+                            <li>
+                                <h4><strong>Availability Alignment</strong></h4>
+                                <p>The team will rely on asynchronous communication tools and keep synchronous meetings focused and time-boxed in order to meet everyone's schedule. </p>
+                            </li>
+                            <li>
+                                <h4><strong>Minimum Viable Product First</strong></h4>
+                                <p>The initial goal will be a basic, functional product that allows for basic recipes to be output.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="subcontent-card">
+                <h2 class="card-title">Development Plan</h2>
+                <div class="card-body">
+                    <div>
+                        <h3>Development Methodology</h3>
+                        <p>The team will follow an Agile, sprint-based approach with weekly planning meetings, short development iterations, and continuous integration. Tasks will be broken into small, testable components, allowing the project to adapt based on progress and challenges.</p>
+                    </div>
+                    <div>
+                        <h3>Developmental Milestones</h3>
+                        <ol>
+                            <li><strong>Define functional and pre-development requirements</strong>
+                                <ol class="primary-list">
+                                    <li>Define user stories</li>
+                                    <li>Find targets for web scraping</li>
+                                    <li>Identify tools/APIs
+                                        <ol class="secondary-list">
+                                            <li>What language will back end logic be in?</li>
+                                            <li>How will we host the SQL server?</li>
+                                            <li>How will we send the HTTP request and what will be at POST?</li>
                                         </ol>
                                     </li>
-                                    <li><strong>Fulfill pre-development requirements and define database schema</strong>
-                                        <ol class="primary-list">
-                                            <li>Implement web scraper</li>
-                                            <li>Plan schema
-                                                <ol class="secondary-list">
-                                                    <li>Data Warehouse or Relational?</li>
-                                                    <li>Primary and foreign keys</li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                    </li>
-                                    <li><strong>Build and initialize SQL database</strong>
-                                        <ol class="primary-list">
-                                            <li>Implement table schema and begin populating tables</li>
-                                            <li>Test data retrieval directly against the database.</li>
-                                        </ol>
-                                    </li>
-                                    <li><strong>Develop backend API and finalize front end</strong>
-                                        <ol class="primary-list">
-                                            <li>Create and test scripts that can run the defined queries.</li>
-                                            <li>Finalize look and interactables on project front end.</li>
-                                        </ol>
-                                    </li>
-                                    <li><strong>Connect front and back end with an HTTP endpoint</strong>
-                                        <ol class="primary-list">
-                                            <li>Test vs the user stories</li>
+                                    <li>Create project website</li>
+                                </ol>
+                            </li>
+                            <li><strong>Fulfill pre-development requirements and define database schema</strong>
+                                <ol class="primary-list">
+                                    <li>Implement web scraper</li>
+                                    <li>Plan schema
+                                        <ol class="secondary-list">
+                                            <li>Data Warehouse or Relational?</li>
+                                            <li>Primary and foreign keys</li>
                                         </ol>
                                     </li>
                                 </ol>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="subcontent-card">
-                        <h2 class="card-title">Project Tracking</h2>
-                        <div class="card-body">
-                            <p>Trello will be the primary tracking tool for this project.  Tasks will be assigned to team members each week with due dates, and lists will be an easy point-of-reference for weekly meetings.  This will streamline communication about weekly progress and provide clarity on each team member’s responsibilities for that week.</p>
-                        </div>
-                    </section>
-                    <section class="subcontent-card">
-                        <h2 class="card-title">Planned Tech Stack</h2>
-                        <div class="card-body">
-                            <h4><strong>Front End</strong></h4>
-                            <ul>
-                                <li>HTML & CSS</li>
-                                <li>JavaScript with React</li>
-                            </ul>
-                            <h4><strong>Back End</strong></h4>
-                            <ul>
-                                <li>Python with Flask for RESTful API development</li>
-                                <li>Python and Batch for web scraping (if implemented)</li>
-                            </ul>
-                            <h4><strong>Database</strong></h4>
-                            <ul>
-                                <li>SQL Lite - runs as part of the application for these testing phases.</li>
-                            </ul>
-                        </div>
-                    </section>
+                            </li>
+                            <li><strong>Build and initialize SQL database</strong>
+                                <ol class="primary-list">
+                                    <li>Implement table schema and begin populating tables</li>
+                                    <li>Test data retrieval directly against the database.</li>
+                                </ol>
+                            </li>
+                            <li><strong>Develop backend API and finalize front end</strong>
+                                <ol class="primary-list">
+                                    <li>Create and test scripts that can run the defined queries.</li>
+                                    <li>Finalize look and interactables on project front end.</li>
+                                </ol>
+                            </li>
+                            <li><strong>Connect front and back end with an HTTP endpoint</strong>
+                                <ol class="primary-list">
+                                    <li>Test vs the user stories</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </section>
-            
-        </main>
-    </body>
-</html>
+            <section class="subcontent-card">
+                <h2 class="card-title">Project Tracking</h2>
+                <div class="card-body">
+                    <p>Trello will be the primary tracking tool for this project.  Tasks will be assigned to team members each week with due dates, and lists will be an easy point-of-reference for weekly meetings.  This will streamline communication about weekly progress and provide clarity on each team member’s responsibilities for that week.</p>
+                </div>
+            </section>
+            <section class="subcontent-card">
+                <h2 class="card-title">Planned Tech Stack</h2>
+                <div class="card-body">
+                    <h4><strong>Front End</strong></h4>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript with React</li>
+                    </ul>
+                    <h4><strong>Back End</strong></h4>
+                    <ul>
+                        <li>Python with Flask for RESTful API development</li>
+                        <li>Python and Batch for web scraping (if implemented)</li>
+                    </ul>
+                    <h4><strong>Database</strong></h4>
+                    <ul>
+                        <li>SQL Lite - runs as part of the application for these testing phases.</li>
+                    </ul>
+                </div>
+            </section>
+    </section>
+    
+</main>
