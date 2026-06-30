@@ -1,7 +1,7 @@
 title: "What's for Dinner"
 description: "Dev notes and application that quickly finds recipes well-suited to ingredients users have on hand."
-baseurl: "" # Keep empty for root of custom domain, or set to "/WhatsForDinner" if deployed to github.io subpath.
-url: "/WhatsForDinner"
+baseurl: "/WhatsForDinner" # Keep empty for root of custom domain, or set to "/WhatsForDinner" if deployed to github.io subpath.
+url: ""
 
 # Build settings
 plugins:
