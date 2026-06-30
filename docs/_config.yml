@@ -7,4 +7,4 @@ url: ""
 plugins:
   - jekyll-feed
 
-exclude: ["README.md", "LICENSE", "Gemfile", "Gemfile.lock"] 
+exclude: ["README.md", "LICENSE", "Gemfile", "Gemfile.lock" , "Tech/" , "Ideas/" , "user_stories/"] 

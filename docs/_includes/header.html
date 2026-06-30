@@ -1,19 +1,20 @@
 <header id="site-header">
     <div class="logo">
-        <h1 class="logo-name">Team 6</h1>
+        <h1 href="{{ site.baseurl }}/index.html" class="logo-name">Team 6</h1>
         <span class="logo-divider">|</span>
-        <p class="logo-description">Whats for Dinner</p>
+        <a href="{{ site.baseurl }}/WhatsForDinner.html" class="logo-description">Whats for Dinner</a>
         <span class="logo-divider">|</span>
-        <a href="https://github.com/MattWermers/WhatsForDinner.git" class="logo-contact" title="View the source code for the project and this website.">GitHub</a>
+        <a href="https://github.com/MattWermers/WhatsForDinner.git" target="_blank" class="logo-contact" title="View the source code for the project and this website.">GitHub</a>
     </div>
 
     <nav class="navbar">
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="{{ site.baseurl }}/index.html" class="nav-link">|||</a>
+                <a class="nav-link">|||</a>
                 <div class="dropdown-menu">
-                    <a href="{{ site.baseurl }}/team.html">The team</a>
-                    <a href="{{ site.baseurl }}/WhatsForDinner.html">The tool</a>
+                    <a href="{{ site.baseurl }}/index.html">Overview</a>
+                    <a href="{{ site.baseurl }}/team.html">The Team</a>
+                    <a href="{{ site.baseurl }}/WhatsForDinner.html">The Tool</a>
                     <a href="{{ site.baseurl }}/writeups.html">Docs</a>
                 </div>
             </li>

@@ -7,14 +7,51 @@
 
     <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Base/style-body.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Base/style-color.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/navigation-item.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/content-item.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Imported/subcontent-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Objects/navigation-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Objects/simple-card.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Objects/grid-fill-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Objects/masonry-item.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/Styles/Objects/badge-item.css">
+
 </head>
 <body>
     {% include header.html %}
     {{ content }}
 </body>
 <footer>
-    <p>{{ page.title }}</p>
+    <p>{{ page.title }} - Views: <strong id="view-count">...</strong></p>
 </footer>
+
+<script>
+    // This will use the external countapi to count visitor counts
+    document.addEventListener("DOMContentLoaded" , () => { // We use event listener because it processes before page load
+        const key = "{{ page.title | slugify }}"; // Gets the title from jekyll, removes any dangerous characters, and jsonifies it (idk really about jsonify, this is to make it safe?)
+        const baseURL = "https://visit-count-cufkfpc9fafuhwe0.westus2-01.azurewebsites.net/api/GetVisitorCount?slug=";
+        const functionURL = `${baseURL}${key}`;
+
+        fetch(functionURL) // Access the function with built in pattern
+            .then(async response => { // Asnyc to let the page load and to enable error log
+                if (!response.ok) { // Bad response
+                    const errorDesc = await response.text();
+                    throw new Error(`HTTP ${response.satus} on visitor count: $errorDesc || response.StatusText`)
+                }
+                return response.json();
+            })
+            .then(data => { // The response from the previous .then becomes data here
+                // Update the counter id=view-count
+                const countElement = document.getElementById("view-count");
+                if (countElement) {
+                    countElement.innerText = data.views;
+                }
+            })
+            .catch(error => {
+                // Log errors
+                console.error("Visitor count error:", error)
+                const countElement = document.getElementById("view-count");
+                if (countElement) {
+                    countElement.innerText = "Broken :("
+                }
+            });
+        }
+    );
+</script>

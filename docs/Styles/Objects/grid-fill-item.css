@@ -1,0 +1,71 @@
+/* 
+   Object: Split Space Container & Items
+   --------------------------------------------------
+   A reusable layout object that splits space into even sections
+   with a maximum size (percentage portion of parent) and a minimum
+   size (absolute fallback), scaling content fluidly when space shrinks.
+*/
+
+.split-space-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap, 1.5rem);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.split-space-item {
+    box-sizing: border-box;
+    flex: 1 1 var(--min-w, 300px);
+    
+    /* 1. Maximum size as a portion of the parent container */
+    max-width: var(--max-portion-w, 50%);
+    max-height: var(--max-portion-h, 100%);
+    
+    /* 2. Minimum size to protect content layout */
+    /* If container width is less than --min-w, min() makes it shrink to 100% of container instead of overflowing */
+    min-width: min(100%, var(--min-w, 300px));
+    min-height: min(100%, var(--min-h, 200px));
+    
+    /* 3. Enable Container Queries on the item itself so children scale fluidly */
+    container-type: inline-size;
+    
+    /* Layout styling for content inside */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Fluid Content Typography & Spacing --- */
+/* These rules automatically scale font sizes and paddings based on the item's own width */
+
+.split-space-item {
+    padding: clamp(0.75rem, 4cqw, 1.5rem);
+}
+
+.split-space-item h1,
+.split-space-item h2,
+.split-space-item h3,
+.split-space-item .card-title {
+    /* Font scales from 1.1rem to 1.8rem based on item width */
+    font-size: clamp(1.1rem, 5cqw, 1.8rem) !important;
+    margin-top: 0;
+    margin-bottom: clamp(0.5rem, 2cqw, 1rem);
+}
+
+.split-space-item p,
+.split-space-item li,
+.split-space-item .card-body {
+    /* Font scales from 0.85rem to 1.05rem based on item width */
+    font-size: clamp(0.85rem, 3cqw, 1.05rem);
+    line-height: 1.5;
+}
+
+/* Ensure images shrink and scale inside the items */
+.split-space-item img,
+.split-space-item video {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}

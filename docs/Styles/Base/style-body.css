@@ -15,6 +15,6 @@ section {
 footer {
     text-align: center;
     padding: 1rem;
-    color: var(--color-banner-text);
+    color: var(--color-subcontent-accentext);
     font-size: 0.9rem;
 }

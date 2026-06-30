@@ -1,0 +1,58 @@
+.content-card {
+    --s: var(--shadow, transparent);
+
+    position: relative;
+    background-color: var(--color-subcontent);
+    border-radius: var(--edge-rounding , 0.5rem); /* Makes it have rounded edges */
+    padding: var(--main-padding, 0.3rem);
+    margin: var(--mt, 0.5rem) var(--mr, 0.5rem) var(--mb, 0.5rem) var(--ml, 0.5rem);
+    box-shadow: 0 4px 8px var(--s);
+    scroll-margin-top: var(--upper-scroll-margin, 1.5rem); /* Not sure how to make this dynamic with size */
+}
+
+/* This makes a flex box that will by defauly be vertical. to hold .card-* type content*/
+.content-card .basic-content {
+    display: flex;
+    flex-direction: var(--row, column);
+    padding-top: 0.9rem; /* Placeholder calc later, pushes the content within this container down, but not the container itself (vs margin). This is used to push the content below the relative title.*/
+}
+
+.content-card .card-title {
+    position: absolute;
+
+    /* Alignment, find the spot you want on the parent to center. This pretains to the margins of the object.*/
+    top: var(--title-align-top, 0);
+    left: var(--title-align-left, 0);
+    /* Alignment, float it off the parent. This movement is decoupled from the margins of the object*/
+    transform: translate(var(--title-float-x, 0), var(--title-float-y, 0));
+
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    border-radius: 0.2rem;
+
+
+    color: var(--color-subcontent-primarytext);
+    background-color: var(--color-subcontent);
+    border: 3px solid var(--color-bg);
+    border-radius: 0.5rem;
+}
+
+.content-card .card-body {
+    margin-top: var(--body-top-margin, 2.5rem);
+    margin-left: 0.5rem;
+    color: var(--color-subcontent-primarytext);
+}
+
+.card-body h1,
+.card-body h2,
+.card-body h3,
+.card-body h4,
+.card-body h5,
+.card-body h6,
+.card-body ul,
+.card-body ol {
+    margin-left: 0.5rem;
+}
+
+.card-body p {
+    margin-left: 1rem;
+}

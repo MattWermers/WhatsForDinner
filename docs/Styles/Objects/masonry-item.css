@@ -1,0 +1,32 @@
+/* This item will fill a cell dynamically */
+/*
+It will put max columns when space provides, or 1 column when limited.
+Threshold: min size of column
+*/
+
+.masonry-container {
+    --col-thershold: var(--min-threshold, 400px);
+    --max-cols: var(--max-columns, 3);
+    --col-gap: var(--gap, 0.5rem);
+
+    column-width: var(--col-thershold);
+    column-count: var(--max-cols);
+    column-gap: var(--col-gap);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.masonry-item {
+    display: inline-block;
+    break-inside: avoid;
+    width: 100%;
+    box-sizing: border-box;
+    
+    /* Enable Container Queries on the item itself so children scale fluidly */
+    container-type: inline-size;
+    
+    /* Layout styling for content inside */
+    display: flex;
+    flex-direction: column;
+    overflow: var(--of-visible, hidden);
+}
