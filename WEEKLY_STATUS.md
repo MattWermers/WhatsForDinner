@@ -35,19 +35,33 @@
 ## Completed tasks
 This week we focused on pre-deployment. We researched the existing tools and API's, selected a database, wrote some user stories, and improved our website fucntionally. Additinally, we started to use Trello.
 <details>
-<summary>Dropped</summary>
-<ul>
-    <li>Implement Web Scraper - Switch to existing CSV</li>
-</ul>
-</details>
-
-<details>
-<summary>Completed</summary>
-<ul>
-    <li>Create Project Website</li>
-    <li>Define user stories (partial)</li>
-    <li>Selected data source</li>
-</ul>
+    <summary>Completed Tasks</summary>
+    <details>
+        <summary>Matt</summary>
+        <ul>
+                <li>Defined some user stories</li>
+                <li>Generated the site with jekyll using layouts and added pages</li>
+                <li>Connected pages to back end azure function using Javascript for practice</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Zeke</summary>
+        <ul>
+                <li>placeholder</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Cameron</summary>
+        <ul>
+                <li>placeholder</li>
+        </ul>
+    </details>
+    <details>
+        <summary>Jimmy</summary>
+        <ul>
+                <li>placeholder</li>
+        </ul>
+    </details>
 </details>
 
 ---
