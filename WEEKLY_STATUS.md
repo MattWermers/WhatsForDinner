@@ -23,7 +23,7 @@
 Our team is utilizing Trello for project tracking and management.  Everyone is responsible for adding tasks to the appropriate lists.  For simplicity, these include Meetings, Today, This Week, Later, and Done.  As work on the project advances, the team may opt for utilizing built-in visual features to designate priority in Trello to choose which tasks should be started first.
 
 ![Screenshot of Team 6's Trello board](https://o365coloradoedu-my.sharepoint.com/:i:/g/personal/cawe3948_colorado_edu/IQDDPtd8_k0gQ5mGjztXdfR7AVb4ENUOxhCyYfNAOQOv30c?e=BVroYQ) 
->>>>>>> cameron
+
 ## Progress Since Last Week
 - Added pages Team, Tool, and Docs
     - Team documents the team.
