@@ -58,7 +58,6 @@ This week we focused on pre-deployment. We researched the existing tools and API
     <details>
         <summary>Cameron</summary>
         <ul>
-                <li>placeholder</li>
                 <li>Researched similar sites/web tools including Supercook and Epicurious</li>
                 <li>Put together a short presentation for the team on features and design</li>
                 <li>Defined a list of pantry "staple" ingredients to be excluded from recipe searches</li>
