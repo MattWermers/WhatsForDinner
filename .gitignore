@@ -6,3 +6,5 @@ vendor
 
 # not sure where these are coming from
 .ipynb_checkpoints/
+__pycache__/
+*.pyc
