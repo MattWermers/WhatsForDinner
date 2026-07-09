@@ -3,3 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# not sure where these are coming from
+.ipynb_checkpoints/
