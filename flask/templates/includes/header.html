@@ -1,0 +1,25 @@
+<header id="site-header">
+    <div class="logo">
+        <h1 class="logo-name"><a href="https://mattwermers.github.io/WhatsForDinner/"
+                style="color: inherit; text-decoration: none;">Team 6</a></h1>
+        <span class="logo-divider">|</span>
+        <a href="{{ url_for('wfd_home') }}" class="logo-description">Whats for Dinner</a>
+        <span class="logo-divider">|</span>
+        <a href="https://github.com/MattWermers/WhatsForDinner.git" target="_blank" class="logo-contact"
+            title="View the source code for the project and this website.">GitHub</a>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a class="nav-link">|||</a>
+                <div class="dropdown-menu">
+                    <a href="https://mattwermers.github.io/WhatsForDinner/">Overview</a>
+                    <a href="https://mattwermers.github.io/WhatsForDinner/team.html">The Team</a>
+                    <a href="{{ url_for('wfd_home') }}">The Tool</a>
+                    <a href="https://mattwermers.github.io/WhatsForDinner/writeups.html">Docs</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
