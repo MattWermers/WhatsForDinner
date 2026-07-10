@@ -19,7 +19,7 @@ This document defines the **pages** WhatsForDinner will implement and what is re
 ## General testing
 - Non-API endpoints load with trailing slash (‘.html/’)
 
-# 1) Landing Page/Tool
+# 1) wfd
 
 ## Page Title
 WhatsforDinner - Home
@@ -83,7 +83,7 @@ Features: Present one recipe option at a time that can be completed from users�
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image2.png)
+![Landing](images_for_md/image3.png)
 
 ### Parameters Needed for the Page
 - Route parameters: 
@@ -142,7 +142,7 @@ Purpose: Inform users of the project usage and of the motivation behind the proj
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image3.png)
+![Landing](images_for_md/image4.png)
 
 ## Parameters Needed for the Page
 - Route parameters: None
@@ -180,7 +180,7 @@ Purpose: Display photos and descriptions of team members. Detail team member con
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image4.png)
+![Landing](images_for_md/image2.png)
 
 ## Parameters Needed for the Page
 - Route parameters: None
