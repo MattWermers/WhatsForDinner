@@ -24,37 +24,7 @@
     </footer>
 
     <script>
-        // This will use the external countapi to count visitor counts
-        document.addEventListener("DOMContentLoaded" , () => { // We use event listener because it processes before page load
-            const key = "{{ title|lower|replace(' ', '-')|replace('---', '-') }}"; // Gets the title, converts to lowercase, replaces spaces with hyphens to slugify
-            const baseURL = "https://visit-count-cufkfpc9fafuhwe0.westus2-01.azurewebsites.net/api/GetVisitorCount?slug=";
-            const functionURL = `${baseURL}${key}`;
-
-            fetch(functionURL) // Access the function with built in pattern
-                .then(async response => { // Asnyc to let the page load and to enable error log
-                    if (!response.ok) { // Bad response
-                        const errorDesc = await response.text();
-                        throw new Error(`HTTP ${response.status} on visitor count: ${errorDesc || response.statusText}`)
-                    }
-                    return response.json();
-                })
-                .then(data => { // The response from the previous .then becomes data here
-                    // Update the counter id=view-count
-                    const countElement = document.getElementById("view-count");
-                    if (countElement) {
-                        countElement.innerText = data.views;
-                    }
-                })
-                .catch(error => {
-                    // Log errors
-                    console.error("Visitor count error:", error)
-                    const countElement = document.getElementById("view-count");
-                    if (countElement) {
-                        countElement.innerText = "Broken :("
-                    }
-                });
-            }
-        );
+        
     </script>
 </body>
 </html>

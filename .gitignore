@@ -8,3 +8,6 @@ vendor
 .ipynb_checkpoints/
 __pycache__/
 *.pyc
+
+# where the database lives
+db/
