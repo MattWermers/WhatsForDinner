@@ -75,20 +75,26 @@
         <div class="right-side">
             
             <div class="display-holder" id="imgrec">
-                <!-- This should be an image taking up the whole available space-->
-                <div id="imgrec-header-title"></div>
-                <div id="imgrec-header-prepInfo">
-                        <p id="imgrec-header-prepInfo">Time: <span id="imgrec-header-prepInfo-time"></span></p>
-                        <p id="imgrec-header-prepInfo">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                <div class="imgrec-img" id="imgrec-img"><img src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
+                <div class="imgrec-details" id="imgrec-details">
+                    <div id="imgrec-title">French Fries</div>
+                    <div id="imgrec-prepInfo">
+                        <p id="imgrec-prepInfo-time">Time: <span id="imgrec-header-prepInfo-time"></span></p>
+                        <p id="imgrec-prepInfo-ingCount">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                        <div id="imgrec-steps">
+                            <ol>
+                                <li>uno</li>
+                                <li>does</li>
+                                <li>tres</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-                <div id="imgrec-recipeList"></div>
-                <div id="imgrec-steps"></div>
-                <div id="imgrec-arrows-holder">
-                    <button id="arrow-left">&#2190;</button>
-                    <button id="arrow-right">&#8594;</button>
-                </div>
+            <div id="imgrec-arrows-holder">
+                <button id="arrow-left">&#2190;</button>
+                <button id="arrow-right">&#8594;</button>
             </div>
-            <div class="display-holder" id="listrec">
+            <div class="display-holder" id="listrec" style="display: none;">
                 <ul id="listrec-list">
                     <li class="listrec-rec-listitem">
                         <div class="listrec-rec-listitem">

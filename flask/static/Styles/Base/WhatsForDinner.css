@@ -59,12 +59,12 @@
 }
 
 .right-side {
-    position: relative;
     margin-right: 2rem;
     display: flex;
     flex-direction: column;
     background-color: #ff0000;
     flex-grow: 1;
+    height: 100%;
 }
 
 .running-app-title {
@@ -72,6 +72,46 @@
     font-weight: 500;
     text-align: center;
     justify-content: center;
+}
+
+.display-holder {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.imgrec-details {
+    margin: 1rem;
+}
+
+.imgrec-title {
+    font-size: 1.5rem;
+    text-align: center;
+    background-color:aqua;
+}
+
+.imgrec-img {
+    position: absolute;
+    display: flex;
+    object-fit: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.imgrec-img img {
+    display: flex;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.display-holder img:hover {
+    opacity: 20%;
+    transition: opacity 0.5s ease;
 }
 
 
@@ -97,13 +137,14 @@
 .p_button {
     border: none;
     border-radius: 1px; /* Makes the borders square but not visibly pointy*/
-    font-size: 0.8rem;
     padding: 0.1rem 0.2rem;
     margin: 2px;
     background: #fff;
     cursor: pointer;
     white-space: nowrap;
     outline: none;
+
+    min-width: 50px;
 }
 
 .p_button:hover {
@@ -120,11 +161,13 @@
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(-50%)
+    transform: translate(-50%);
+    z-index: 1;
 }
 
 #arrow-right {
     position: absolute;
+    z-index: 1;
     top: 50%;
     right: 0;
     transform: translate(50%)
