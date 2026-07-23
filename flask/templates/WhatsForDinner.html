@@ -1,13 +1,112 @@
 {% extends 'default.html' %}
 
 {% block content %}
-<div id="WfD-app"></div>
 
 <!-- These load the react api's from the remote source straight to the browser -->
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-<script>
-    // React code can go here
-</script>
+<!-- javescript goes at bottom so that variables exist-->
+
+<section class="landing-box" id="landing-box">
+    <p id="landing-app-title">WHATSFORDINNER</p>
+    <div id="landing-picklist">
+        <button class="p_button">blank</button>
+        <button class="p_button">blank</button>
+        <button class="p_button">blank</button>
+        <button class="p_button">blank</button>
+        <button class="p_button">blank</button>
+    </div>
+    <div class="searchbar">
+        <input class="input-textbox .add" type="text" placeholder="search for an ingredient">
+        <button class="init-search" id="init-search">&#8594;</button>
+    </div>
+</section>
+
+<section class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
+    <div id="top">
+        <p id="running-app-title">WHATSFORDINNER</p>
+    </div>
+    <div id="bottom">
+        <div class="left-side">
+            <div id="add-queryBuilder">
+                <p class="queryBuilder-header">Things I have:</p>
+                <div class="running-picklist">
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                </div>
+                <div class="searchbar">
+                    <input class="input-textbox .add" type="text" placeholder="search for an ingredient">
+                </div>
+            </div>
+            <div id="remove-queryBuilder">
+                <p class="queryBuilder-header">Things I avoid:</p>
+                <div class="running-picklist">
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                    <button class="p_button">blank</button>
+                </div>
+                <div class="searchbar">
+                    <input class="input-textbox" id="search-remove" type="text" placeholder="search for an ingredient">
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <button class="p_button" id="random-button">decide for me</button>
+        </div>
+        <div class="right-side">
+            
+            <div class="display-holder" id="imgrec">
+                <!-- This should be an image taking up the whole available space-->
+                <div id="imgrec-header-title"></div>
+                <div id="imgrec-header-prepInfo">
+                        <p id="imgrec-header-prepInfo">Time: <span id="imgrec-header-prepInfo-time"></span></p>
+                        <p id="imgrec-header-prepInfo">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                </div>
+                <div id="imgrec-recipeList"></div>
+                <div id="imgrec-steps"></div>
+                <div id="imgrec-arrows-holder">
+                    <button id="arrow-left">&#2190;</button>
+                    <button id="arrow-right">&#8594;</button>
+                </div>
+            </div>
+            <div class="display-holder" id="listrec">
+                <ul id="listrec-list">
+                    <li class="listrec-rec-listitem">
+                        <div class="listrec-rec-listitem">
+                            <!--img here-->
+                            <p class="liscrec-rec-listitem-text"><span id="listrec-rec-listitem-name">blank</span>
+                            </p>
+                            <p class="listrec-rec-listitem-text"><span id="listrec-rec-listitem-time">blank</span>
+                            </p>
+                            <p class="listrec-rec-listitem-text"><span
+                                    id="listrec-rec-listitem-ingredientcount">blank</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='scripts/wfd_app.js')}}"></script>
 {% endblock %}

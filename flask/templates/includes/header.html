@@ -1,25 +1,109 @@
-<header id="site-header">
-    <div class="logo">
-        <h1 class="logo-name"><a href="https://mattwermers.github.io/WhatsForDinner/"
-                style="color: inherit; text-decoration: none;">Team 6</a></h1>
-        <span class="logo-divider">|</span>
-        <a href="{{ url_for('wfd_home') }}" class="logo-description">Whats for Dinner</a>
-        <span class="logo-divider">|</span>
-        <a href="https://github.com/MattWermers/WhatsForDinner.git" target="_blank" class="logo-contact"
-            title="View the source code for the project and this website.">GitHub</a>
+<!-- Floating Dropdown Menu -->
+<div class="floating-dropdown">
+    <button class="dropdown-btn" aria-label="Menu" aria-haspopup="true">
+        <!-- Tiny hamburger SVG icon perfectly centered -->
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    <div class="dropdown-content">
+        <a href="/">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#settings">Settings</a>
+        <div class="dropdown-divider"></div>
+        <a href="#help">Help & Feedback</a>
     </div>
+</div>
 
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a class="nav-link">|||</a>
-                <div class="dropdown-menu">
-                    <a href="https://mattwermers.github.io/WhatsForDinner/">Overview</a>
-                    <a href="https://mattwermers.github.io/WhatsForDinner/team.html">The Team</a>
-                    <a href="{{ url_for('wfd_home') }}">The Tool</a>
-                    <a href="https://mattwermers.github.io/WhatsForDinner/writeups.html">Docs</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</header>
+<style>
+    .floating-dropdown {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 9999;
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .dropdown-btn {
+        width: 40px;
+        height: 40px;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-btn:hover {
+        background-color: #333333;
+    }
+
+    .dropdown-btn:active {
+        transform: scale(0.92);
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background-color: #ffffff;
+        min-width: 160px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        padding: 6px 0;
+        overflow: hidden;
+    }
+
+    .floating-dropdown:hover .dropdown-content {
+        display: block;
+        animation: fadeIn 0.15s ease-out;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: #333333;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    /* Change color on hover */
+    .dropdown-content a:hover {
+        background-color: #f5f5f7;
+        color: #000000;
+    }
+
+    /* Divider */
+    .dropdown-divider {
+        height: 1px;
+        background-color: #eaeaea;
+        margin: 6px 0;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
