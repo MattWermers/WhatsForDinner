@@ -170,6 +170,18 @@ class db_connectionHandler:
             ) strict;
             '''
         )
+        self.curr.execute (
+            '''
+            CREATE TABLE table_recipe_staging (
+            title TEXT NOT NULL,
+            ingredients TEXT NOT NULL,
+            distinct_ingredients TEXT NOT NULL,
+            num_ingredients INTEGER CHECK (num_ingredients >= 0),
+            link TEXT,
+            source TEXT
+            )
+            '''
+        )
 
         self.conn.commit()
     
