@@ -1,11 +1,11 @@
 # Milestone 1: Project Proposal
 
 ## Project Title
-**What's For Dinner**
+**WhatsForDinner**
 
 ## Team Information
 - **Team Number:** 6  
-- **Team Name/Product Title:** What's for Dinner 
+- **Team Name/Product Title:** WhatsForDinner 
 
 ### Team Members
 - **Zeke Buckholz** (GitHub: `ZekeBuckholz`, Email: zebu4871@colorado.edu)  
@@ -20,12 +20,12 @@
 ---
 
 ## Vision Statement
-**What’s for Dinner** is a web application that quickly finds recipes well-suited to ingredients users have on hand.  It combines user-provided input (ingredients and quantities) with required “kitchen staples” (salt, pepper, oil, etc.) to suggest possible recipes that can be prepared without a trip to the grocery store.
+**WhatsForDinner** is a web application that quickly finds recipes well-suited to ingredients users have on hand.  It combines user-provided input (ingredients and quantities) with required “kitchen staples” (salt, pepper, oil, etc.) to suggest possible recipes that can be prepared without a trip to the grocery store.
 
 ---
 
 ## Motivation
-Many people struggle to use up their groceries before they spoil, whether it’s due to a lack of time, limited store access, or just recipe burnout. **What’s for Dinner** is a web-based platform that solves this issue by providing satisfying recipes that use only the ingredients in the user’s kitchen. **What’s for Dinner** will have users saving time and money, reducing food waste, and enhancing their culinary skills.
+Many people struggle to use up their groceries before they spoil, whether it’s due to a lack of time, limited store access, or just recipe burnout. **WhatsForDinner** is a web-based platform that solves this issue by providing satisfying recipes that use only the ingredients in the user’s kitchen. **WhatsForDinner** will have users saving time and money, reducing food waste, and enhancing their culinary skills.
 
 ---
 
