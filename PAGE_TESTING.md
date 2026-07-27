@@ -22,7 +22,7 @@ This document defines the **pages** WhatsForDinner will implement and what is re
 # 1) wfd
 
 ## Page Title
-WhatsforDinner - Home
+WhatsForDinner - Home
 
 ## Description
 Purpose: Present the WhatsForDinner tool and allow users to search for and select owned ingredients. Bring users to the Active tool page once an owned ingredient has been selected. Enable users to find other pages if seeking information related to project development.
@@ -75,7 +75,7 @@ Purpose: Present the WhatsForDinner tool and allow users to search for and selec
 # 2) wfd_search
 
 ## Page Title
-WhatsforDinner - Active
+WhatsForDinner - Active
 
 ## Page Description
 Purpose: Display the results of the tool and allow the user to edit the filters of their search.  

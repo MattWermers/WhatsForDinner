@@ -2,13 +2,13 @@
 
 ## Project Milestone 5: SQL Design
 
-Project: What’s For Dinner
+Project: WhatsForDinner
 Team: Team 6
 Purpose: Database design and testing document for developers
 
 Overview
 
-What’s For Dinner is a web application that allows users to enter ingredients they already have and receive recipe suggestions.
+WhatsForDinner is a web application that allows users to enter ingredients they already have and receive recipe suggestions.
 
 The application will use:
 
