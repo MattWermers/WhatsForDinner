@@ -1,74 +1,91 @@
-# WEEKLY_STATUS - Week <WEEK_NUMBER>
-
-**Project:** WhatsForDinner
-
-**Team Number:** 6
-
-**Team Name:** Team 6
+# Project Status: Week WEEK_NUMBER
 
 ---
 
-## Reporting Period
+**Project:** WhatsForDinner  
+**Team Name:** Team 6    
+**Meeting Held:** Yes|No  
+**Meeting Date:** 2026-MM-DD  
+**Meeting Duration:** DURATION_IN_MINUTES Minutes  
+**Meeting Format:** Google Meet  
+**Meeting Recording:** HYPERLINK|Meeting not recorded  
 
-**Week:** <WEEK_NUMBER>
+---
 
-**Meeting Held:** <Yes|No>
+## Status Overview
 
-**Meeting Date:** <2026-MM-DD>
-
-**Meeting Duration:** <DURATION_IN_MINUTES> Minutes
-
-**Meeting Format:** Google Meet
-
-**Meeting Recording:** <HYPERLINK|Meeting not recorded>
+APP_STATUS_PARAGRAPH
 
 ---
 
 ## Project Management Snapshot
 
-Our team uses Trello for project tracking and management. Each team member is responsible for adding their tasks to the appropriate lists: **Meetings**, **Today**, **This Week**, **Later**, and **Done**. As the project progresses, the team may begin using Trello's built-in visual features to prioritize tasks.
+##### Scrum Master Responsibilities
+The current Scrum Master, SCRUM_MASTER_NAME, is in charge of scheduling weekly meetings, adding tasks to the project tracker board, and uploading weekly-status files.  
 
-Trello is updated after each weekly meeting to reflect newly assigned work. During each meeting, the Scrum Master completes the `weekly-status` file using the `TEMPLATE.md` on GitHub. After reviewing the document, the Scrum Master is responsible for committing and pushing it to the project repository.
+##### Current Stack
+* Google Meet is used for weekly team meetings.
+* Trello is used to track itemized progress.
+* These weekly-status documents are used to track meeting notes and overall project status.
+
+##### Trello Screenshot:  
+![Trello board screenshot for week WEEK_NUMBER](images/week-WEEK_NUMBER-trello.png)
 
 ---
 
 ## Progress Summary Since Last Week
 
-<PROGRESS_SUMMARY>
+PROGRESS_SUMMARY_PARAGRAPH
 
 ---
 
 ## Completed Tasks
 
-* **Matt**
-  * <TASK>
-* **Zeke**
-  * <TASK>
-* **Cameron**
-  * <TASK>
-* **Jimmy**
-  * <TASK>
+- **Matt**
+  - COMPLETED_TASK
+- **Zeke**
+  - COMPLETED_TASK
+- **Cameron**
+  - COMPLETED_TASK
+- **Jimmy**
+  - COMPLETED_TASK
+
+---
+
+## Blockers and Issues
+
+- BLOCKER_OR_ISSUE
+- BLOCKER_OR_ISSUE
+
+---
+
+## Risks and Mitigation
+
+- **Identified Risk:** RISK
+  - *Mitigation:* MITIGATION
+- **Identified Risk:** RISK
+  - *Mitigation:* MITIGATION
 
 ---
 
 ## Additional Notes:
 
-<NOTES>
+- NOTE
+- NOTE
 
 ---
 
 ## Planned Tasks
 
-* <TASK_WITH_DUE_DATE>
-* <TASK_WITH_DUE_DATE>
-* <TASK_WITH_DUE_DATE>
-* <TASK_WITH_DUE_DATE>
+- TASK_WITH_DUE_DATE
+- TASK_WITH_DUE_DATE
 
 ---
 
 ## Document Status
-Have all tasks been added to Trello after meeting?  
-<Yes|Not yet>
 
-This document will be pushed to the project repository by:  
-<Name>
+##### Is Trello Up-to-Date?
+Yes|Not yet
+
+##### This document will be published to GitHub by:
+SCRUM_MASTER_NAME
