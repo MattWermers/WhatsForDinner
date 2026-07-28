@@ -1,4 +1,4 @@
-# WEEKLY_STATUS - Week [##]
+# WEEKLY_STATUS - Week <WEEK_NUMBER>
 
 **Project:** WhatsForDinner
 
@@ -10,13 +10,13 @@
 
 ## Reporting Period
 
-**Week:** [##]
+**Week:** <WEEK_NUMBER>
 
-**Meeting Held:** [Yes/No]
+**Meeting Held:** <Yes|No>
 
-**Meeting Date:** [2026-MM-DD]
+**Meeting Date:** <2026-MM-DD>
 
-**Meeting Duration:** [##] Minutes
+**Meeting Duration:** <DURATION_IN_MINUTES> Minutes
 
 **Meeting Format:** Google Meet
 
@@ -32,59 +32,41 @@ Trello is updated after each weekly meeting to reflect newly assigned work. Duri
 
 ## Progress Summary Since Last Week
 
-[Progress]
+<PROGRESS_SUMMARY>
 
 ---
 
 ## Completed Tasks
 
-<details>
- <summary>Completed Tasks</summary>
-  <details>
-   <summary>Matt</summary>
-    <ul>
-     <li>[Task]</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Zeke</summary>
-    <ul>
-     <li>[Task]</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Cameron</summary>
-    <ul>
-     <li>[Task]</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Jimmy</summary>
-    <ul>
-     <li>[Task]</li>
-    </ul>
-  </details>
-</details>
+* **Matt**
+  * <TASK>
+* **Zeke**
+  * <TASK>
+* **Cameron**
+  * <TASK>
+* **Jimmy**
+  * <TASK>
 
 ---
 
 ## Additional Notes:
 
-[Notes]
+<NOTES>
 
 ---
 
 ## Planned Tasks
 
-<ul>
- <li>[Task]</li>
-</ul>
+* <TASK_WITH_DUE_DATE>
+* <TASK_WITH_DUE_DATE>
+* <TASK_WITH_DUE_DATE>
+* <TASK_WITH_DUE_DATE>
 
 ---
 
 ## Document Status
 Have all tasks been added to Trello after meeting?  
-[Yes/Not yet]
+<Yes|Not yet>
 
 This document will be pushed to the project repository by:  
-[Name]
+<Name>
