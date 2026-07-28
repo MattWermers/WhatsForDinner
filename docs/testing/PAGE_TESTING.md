@@ -29,7 +29,7 @@ Purpose: Present the WhatsForDinner tool and allow users to search for and selec
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image1.png)
+![Landing](images/wireframe-home.png)
 
 
 ## Parameters Needed for the Page
@@ -83,7 +83,7 @@ Features: Present one recipe option at a time that can be completed from usersâ€
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image3.png)
+![Landing](images/wireframe-active.png)
 
 ### Parameters Needed for the Page
 - Route parameters: 
@@ -142,7 +142,7 @@ Purpose: Inform users of the project usage and of the motivation behind the proj
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image4.png)
+![Landing](images/wireframe-about.png)
 
 ## Parameters Needed for the Page
 - Route parameters: None
@@ -180,7 +180,7 @@ Purpose: Display photos and descriptions of team members. Detail team member con
 
 ## Mockup (wireframe)
 
-![Landing](images_for_md/image2.png)
+![Landing](images/wireframe-team.png)
 
 ## Parameters Needed for the Page
 - Route parameters: None
@@ -219,7 +219,7 @@ Purpose: Document project updates and resources. Link GitHub project repository.
 
 ## Mockup (Wireframe)
 
-![Landing](images_for_md/image5.png)
+![Landing](images/wireframe-docs.png)
 
 ## Parameters Needed for the Page
 - Route parameters: None
