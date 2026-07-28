@@ -9,7 +9,7 @@
 ---
 ## Reporting Period
 
-**Week:** 3
+**Week:** 07
 
 **Meeting Held:** Yes
 
@@ -29,7 +29,7 @@ This week primarily saw focus on pre-deployment. We researched the existing tool
 ## Project Management Snapshot
 Our team is utilizing Trello for project tracking and management.  Everyone is responsible for adding tasks to the appropriate lists.  For simplicity, these lists include Meetings, Today, This Week, Later, and Done.  As work on the project advances, the team may opt for utilizing built-in visual features to designate priority in Trello to choose which tasks should be started first.  
 
-![Screenshot of Team 6's Trello board](trello_screenshot.png) 
+![Screenshot of Team 6's Trello board](images/week-07-trello.png) 
 
 Our team uses Google Meet for meetings and WEEKLY\_STATUS.md files posted to our project repository for documenting progress.  
 
