@@ -20,6 +20,8 @@
 
 **Meeting Format:** Google Meet
 
+**Meeting Recording:** <HYPERLINK|Meeting not recorded>
+
 ---
 
 ## Project Management Snapshot
