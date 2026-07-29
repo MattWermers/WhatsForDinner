@@ -20,6 +20,8 @@
 
 **Meeting Format:** Google Meet
 
+**Meeting Recording:** Meeting not recorded
+
 ---
 
 ## Project Management Snapshot
@@ -38,34 +40,15 @@ This week, the `weekly-status` documentation template was established, and the t
 
 ## Completed Tasks
 
-<details>
- <summary>Completed Tasks</summary>
-  <details>
-   <summary>Matt</summary>
-    <ul>
-     <li>Researched Flask and investigated challenges with generating dynamic responses in Flask pages.</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Zeke</summary>
-    <ul>
-     <li>Created <code>TEMPLATE.md</code> in <code>weekly-status/</code>.</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Cameron</summary>
-    <ul>
-     <li>Reviewed Project Milestone 4.</li>
-     <li>Pushed the Milestone 4 documentation to the project repository.</li>
-    </ul>
-  </details>
-  <details>
-   <summary>Jimmy</summary>
-    <ul>
-     <li>Researched SQL/Database design.</li>
-    </ul>
-  </details>
-</details>
+* **Matt**
+  * Researched Flask and investigated challenges with generating dynamic responses in Flask pages.
+* **Zeke**
+  * Created `TEMPLATE.md` in `weekly-status/`.
+* **Cameron**
+  * Reviewed Project Milestone 4.
+  * Pushed the Milestone 4 documentation to the project repository.
+* **Jimmy**
+  * Researched SQL/Database design.
 
 ---
 
@@ -110,12 +93,9 @@ This week, the `weekly-status` documentation template was established, and the t
 ---
 
 ## Planned Tasks
-
-<ul>
- <li>Cameron will create the five wireframe models by the evening of 07-08.</li>
- <li>Zeke will upload <code>week-08.md</code> to  <code>weekly-status/</code> on 07-08.</li>
- <li>Matt will assign development tasks to groupmates on 07-09.</li>
-</ul>
+* Cameron will create the five wireframe models by the evening of 07-08.
+* Zeke will upload `week-08.md` to  `weekly-status/` on 07-08.
+* Matt will assign development tasks to groupmates on 07-09.
 
 ---
 
