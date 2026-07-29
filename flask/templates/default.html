@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='Styles/Base/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='Styles/Base/WhatsForDinner.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/Base/about.css') }}">
 
     <!-- Most similar font to the one used in the PAGE_TESTING which I think was gothic-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +19,7 @@
 
 
 <body>
+    <p id="app-title"><a href="{{ url_for('wfd_home') }}">WHATSFORDINNER</a></p>
     {% block content %}
     {% endblock %}
     {% include 'includes/footer.html' %}
