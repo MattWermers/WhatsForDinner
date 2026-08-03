@@ -6,6 +6,10 @@ app = Flask(__name__)
 def wfd_home():
     return render_template('WhatsForDinner.html', title="Whats for Dinner")
 
+@app.route('/team')
+def team():
+    return render_template('team.html', title="team")
+
 @app.route('/about')
 def about():
     return render_template('about.html', title="about")

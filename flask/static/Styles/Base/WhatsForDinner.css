@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-parent;
+    width: fit-content;
 }
 
 #app-title{
@@ -27,8 +27,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
-    width: 80%;
+    width: fit-content;
     height: auto;
 }
 
@@ -155,18 +156,19 @@
     cursor: pointer;
     white-space: nowrap;
     outline: none;
-
+    width: fit-content;
     min-width: 50px;
+    font-size: 1rem;
+    color: #555;
+    text-decoration: none;
 }
 
 .p_button:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
+    color: #000;
 }
 
 .p_button.active {
-    background: #326432;
+    color: #000;
 }
 
 #arrow-left {

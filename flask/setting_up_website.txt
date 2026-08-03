@@ -1,4 +1,9 @@
 FROM THE FLASK DIRECTORY
+NOTE - this is for AWS
+    all that needs to be done for local dev is starting a python venv, download flask inside of it, and launch app.py from flask directory
+
+
+    
 
 get virtual env if its lost
 python3 -m venv .venv

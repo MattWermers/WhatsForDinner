@@ -9,22 +9,16 @@
 <!-- javescript goes at bottom so that variables exist-->
 
 
-<section class="landing-box" id="landing-box">
+<div class="landing-box" id="landing-box">
     
-    <div id="landing-picklist">
-        <button class="p_button">blank</button>
-        <button class="p_button">blank</button>
-        <button class="p_button">blank</button>
-        <button class="p_button">blank</button>
-        <button class="p_button">blank</button>
-    </div>
+    <div id="landing-picklist"></div>
     <div class="searchbar">
         <input class="input-textbox .add" type="text" placeholder="search for an ingredient">
-        <button class="init-search" id="init-search">&#8594;</button>
+        <button class="search" id="init-search">&#8594;</button>
     </div>
-</section>
+</div>
 
-<section class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
+<div class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
     <div id="bottom">
         <div class="left-side">
             <div id="add-queryBuilder">
@@ -88,6 +82,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <div id="imgrec-arrows-holder">
                 <button id="arrow-left">&#2190;</button>
                 <button id="arrow-right">&#8594;</button>
@@ -110,7 +105,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <script src="{{ url_for('static', filename='scripts/wfd_app.js')}}"></script>
 {% endblock %}
