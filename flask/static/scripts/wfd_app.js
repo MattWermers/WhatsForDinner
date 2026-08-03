@@ -57,15 +57,43 @@ window.addEventListener("load", () => {
                 picked_items.delete(newButton.dataset.item);
             }
         });
-        button_tiems.push(newButton);
+        button_items.push(newButton);
     });
     console.log("Debug: Ingredient buttons created");
     console.log("Debug: Adding first 5 elements to landing picklist");
     for (let i=0; i < 5; i++) {
-        landing_picklist.appendChild(button_tiems[i]);
+        landing_picklist.appendChild(button_items[i]);
     }
     console.log("Debug: Buttons added to landing picklist");
 })
+
+/* find the search buttons and make it so they call the search function */
+const search_buttons = document.querySelectorAll('.search');
+search_buttons.forEach(button => {
+    button.addEventListener('click', search)
+})
+
+/* keydown events separate for when the cursor is in a searchbar vs when the cursor is somewher else */
+const search_bars = document.querySelectorAll('.searchbar');
+search_bars.forEach(bar => {
+    bar.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            console.log("\tDebug: Enter pressed while cursor inside searchbar");
+            /* this function makes it so that if the user is in the searchbar they search ingredients and dont intitiate a new search */
+                    /* it does so with the folliwng stopPropogation */
+            /* this makes it so that when that user is in the searchbar it does not trigger the even below */
+            event.stopPropagation();
+        }
+    });
+})
+/* this is for when the curor is not in a searchbar */
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        console.log("Debug: Enter pressed while outside of searchbar")
+    }
+})
+
 
 function search(event) {
     event.preventDefault();
