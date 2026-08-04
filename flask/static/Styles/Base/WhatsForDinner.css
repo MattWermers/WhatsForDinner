@@ -2,7 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-parent;
+    width: 60vw;
+}
+
+#app-title{
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#app-title a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .landing-box #landing-app-title {
@@ -15,8 +27,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
-    width: 80%;
+    width: fit-content;
     height: auto;
 }
 
@@ -25,18 +38,19 @@
     width: fit-content;
 }
 
+.picklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
 .running-box {
     flex-direction: column;
     width: 100%;
-}
-
-.running-box #top {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 500;
-}
-
-.running-box #bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,7 +64,7 @@
     width: 30vw;
     min-width: 20rem;
     max-width: 40rem;
-    background-color: #326432;
+    /* background-color: #326432; DEBUG */
     padding: 10px;
 }
 
@@ -62,7 +76,7 @@
     margin-right: 2rem;
     display: flex;
     flex-direction: column;
-    background-color: #ff0000;
+    /* background-color: #ff0000; DEBUG */
     flex-grow: 1;
     height: 100%;
 }
@@ -117,7 +131,9 @@
 
 
 /* Interactables below */
+/*--------v searchbox v---------*/
 .searchbar {
+    position: relative;
     display: flex;
     width: 100%;
     justify-content: fill;
@@ -128,11 +144,55 @@
     outline: none;
 }
 
+.input-textbox input[type="text"] {
+    position: absolute;
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #bbb;
+    background: #fff;
+    color: #111;
+    outline: none;
+    margin-top: 0.25rem;
+}
+
+.input-textbox input[type="text"]::placeholder {
+    color: #999;
+}
+
+.suggestion-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    color: #111;
+    background: #900;
+}
+
+.suggestion-item:focus {
+    background: #e0e0ff;
+    outline: none;
+}
+
 .ingredient-search {
     border-radius: 50%;
     outline: none;
     border: none;
 }
+/*--------^ searchbox ^---------*/
 
 .p_button {
     border: none;
@@ -143,18 +203,19 @@
     cursor: pointer;
     white-space: nowrap;
     outline: none;
-
+    width: fit-content;
     min-width: 50px;
+    font-size: 1rem;
+    color: #555;
+    text-decoration: none;
 }
 
 .p_button:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
+    color: #000;
 }
 
 .p_button.active {
-    background: #326432;
+    color: #000;
 }
 
 #arrow-left {
@@ -171,21 +232,6 @@
     top: 50%;
     right: 0;
     transform: translate(50%)
-}
-
-.input-textbox input[type="text"] {
-    width: 100%;
-    padding: 0.4rem 0.5rem;
-    font-size: 0.8rem;
-    border: 1px solid #bbb;
-    background: #fff;
-    color: #111;
-    outline: none;
-    margin-top: 0.25rem;
-}
-
-.input-textbox input[type="text"]::placeholder {
-    color: #999;
 }
 
 #random-button {

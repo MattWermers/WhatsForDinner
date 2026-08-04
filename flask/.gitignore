@@ -11,3 +11,6 @@ __pycache__/
 
 # where the database lives
 db/
+
+# secrets
+keys/
