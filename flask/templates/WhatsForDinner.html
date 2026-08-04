@@ -12,97 +12,71 @@
 <div class="landing-box" id="landing-box">
     
     <div id="landing-picklist"></div>
-    <div class="searchbar">
-        <input class="input-textbox .add" type="text" placeholder="search for an ingredient">
-        <button class="search" id="init-search">&#8594;</button>
+    <div class="searchbar" id="init-searchbar">
+        <input class="input-textbox" id="init-textbox" type="text" placeholder="search for an ingredient">
+        <div class="suggestion-list" id="init-suggestions" style="display: none;"></div>
+        <button class="query" id="init-search">&#8594;</button>
     </div>
 </div>
 
 <div class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
-    <div id="bottom">
-        <div class="left-side">
-            <div id="add-queryBuilder">
-                <p class="queryBuilder-header">Things I have:</p>
-                <div class="running-picklist">
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                </div>
-                <div class="searchbar">
-                    <input class="input-textbox .add" type="text" placeholder="search for an ingredient">
-                </div>
+    <div class="left-side">
+        <div id="add-queryBuilder">
+            <p class="queryBuilder-header">Things I have:</p>
+            <div class="running-picklist" id="add-picklist"></div>
+            <div class="searchbar" id="add-searchbar">
+                <input class="input-textbox" id="addingred-textbox" type="text" placeholder="search for an ingredient">
+                <div class="suggestion-list" id="add-suggestions" style="display: none;"></div>
             </div>
-            <div id="remove-queryBuilder">
-                <p class="queryBuilder-header">Things I avoid:</p>
-                <div class="running-picklist">
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                    <button class="p_button">blank</button>
-                </div>
-                <div class="searchbar">
-                    <input class="input-textbox" id="search-remove" type="text" placeholder="search for an ingredient">
-                </div>
-            </div>
-            <div class="spacer"></div>
-            <button class="p_button" id="random-button">decide for me</button>
         </div>
-        <div class="right-side">
-            
-            <div class="display-holder" id="imgrec">
-                <div class="imgrec-img" id="imgrec-img"><img src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
-                <div class="imgrec-details" id="imgrec-details">
-                    <div id="imgrec-title">French Fries</div>
-                    <div id="imgrec-prepInfo">
-                        <p id="imgrec-prepInfo-time">Time: <span id="imgrec-header-prepInfo-time"></span></p>
-                        <p id="imgrec-prepInfo-ingCount">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
-                        <div id="imgrec-steps">
-                            <ol>
-                                <li>uno</li>
-                                <li>does</li>
-                                <li>tres</li>
-                            </ol>
-                        </div>
+        <div id="remove-queryBuilder">
+            <p class="queryBuilder-header">Things I avoid:</p>
+            <div class="running-picklist" id="remove-picklist"></div>
+            <div class="searchbar" id="remove-searchbar">
+                <input class="input-textbox" id="removeingred-textbox" type="text" placeholder="search for an ingredient">
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <button class="p_button" id="random-button">decide for me</button>
+    </div>
+    <div class="right-side">
+        
+        <div class="display-holder" id="imgrec">
+            <div class="imgrec-img" id="imgrec-img"><img src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
+            <div class="imgrec-details" id="imgrec-details">
+                <div id="imgrec-title">French Fries</div>
+                <div id="imgrec-prepInfo">
+                    <p id="imgrec-prepInfo-time">Time: <span id="imgrec-header-prepInfo-time"></span></p>
+                    <p id="imgrec-prepInfo-ingCount">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                    <div id="imgrec-steps">
+                        <ol>
+                            <li>uno</li>
+                            <li>does</li>
+                            <li>tres</li>
+                        </ol>
                     </div>
                 </div>
             </div>
-            <div id="imgrec-arrows-holder">
-                <button id="arrow-left">&#2190;</button>
-                <button id="arrow-right">&#8594;</button>
-            </div>
-            <div class="display-holder" id="listrec" style="display: none;">
-                <ul id="listrec-list">
-                    <li class="listrec-rec-listitem">
-                        <div class="listrec-rec-listitem">
-                            <!--img here-->
-                            <p class="liscrec-rec-listitem-text"><span id="listrec-rec-listitem-name">blank</span>
-                            </p>
-                            <p class="listrec-rec-listitem-text"><span id="listrec-rec-listitem-time">blank</span>
-                            </p>
-                            <p class="listrec-rec-listitem-text"><span
-                                    id="listrec-rec-listitem-ingredientcount">blank</span>
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        </div>
+        <div id="imgrec-arrows-holder">
+            <button id="arrow-left">&#2190;</button>
+            <button id="arrow-right">&#8594;</button>
+        </div>
+        <div class="display-holder" id="listrec" style="display: none;">
+            <ul id="listrec-list">
+                <li class="listrec-rec-listitem">
+                    <div class="listrec-rec-listitem">
+                        <!--img here-->
+                        <p class="liscrec-rec-listitem-text"><span id="listrec-rec-listitem-name">blank</span>
+                        </p>
+                        <p class="listrec-rec-listitem-text"><span id="listrec-rec-listitem-time">blank</span>
+                        </p>
+                        <p class="listrec-rec-listitem-text"><span
+                                id="listrec-rec-listitem-ingredientcount">blank</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

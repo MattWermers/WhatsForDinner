@@ -41,15 +41,6 @@
 .running-box {
     flex-direction: column;
     width: 100%;
-}
-
-.running-box #top {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 500;
-}
-
-.running-box #bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -130,7 +121,9 @@
 
 
 /* Interactables below */
+/*--------v searchbox v---------*/
 .searchbar {
+    position: relative;
     display: flex;
     width: 100%;
     justify-content: fill;
@@ -141,11 +134,55 @@
     outline: none;
 }
 
+.input-textbox input[type="text"] {
+    position: absolute;
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #bbb;
+    background: #fff;
+    color: #111;
+    outline: none;
+    margin-top: 0.25rem;
+}
+
+.input-textbox input[type="text"]::placeholder {
+    color: #999;
+}
+
+.suggestion-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    color: #111;
+    background: #900;
+}
+
+.suggestion-item:focus {
+    background: #e0e0ff;
+    outline: none;
+}
+
 .ingredient-search {
     border-radius: 50%;
     outline: none;
     border: none;
 }
+/*--------^ searchbox ^---------*/
 
 .p_button {
     border: none;
@@ -185,21 +222,6 @@
     top: 50%;
     right: 0;
     transform: translate(50%)
-}
-
-.input-textbox input[type="text"] {
-    width: 100%;
-    padding: 0.4rem 0.5rem;
-    font-size: 0.8rem;
-    border: 1px solid #bbb;
-    background: #fff;
-    color: #111;
-    outline: none;
-    margin-top: 0.25rem;
-}
-
-.input-textbox input[type="text"]::placeholder {
-    color: #999;
 }
 
 #random-button {
