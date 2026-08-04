@@ -156,12 +156,13 @@ class db_connectionHandler:
             ) strict;
             '''
         )
+        #changed quantity to REAL instead of INTEGER to handle fractional amounts
         self.curr.execute (
             '''
             CREATE TABLE recipe_ingredients (
             recipe_id INTEGER,
             ingredient_id INTEGER,
-            quantity INTEGER CHECK (quantity >= 0),
+            quantity REAL CHECK (quantity >= 0),
             unit TEXT,
             is_optional INTEGER DEFAULT 0 CHECK (is_optional IN (0,1)),
             PRIMARY KEY (recipe_id,ingredient_id),
@@ -170,6 +171,7 @@ class db_connectionHandler:
             ) strict;
             '''
         )
+        #added directions column
         self.curr.execute (
             '''
             CREATE TABLE table_recipe_staging (
@@ -178,7 +180,8 @@ class db_connectionHandler:
             distinct_ingredients TEXT NOT NULL,
             num_ingredients INTEGER CHECK (num_ingredients >= 0),
             link TEXT,
-            source TEXT
+            source TEXT,
+            directions TEXT
             )
             '''
         )
