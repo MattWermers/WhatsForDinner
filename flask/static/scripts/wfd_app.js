@@ -77,7 +77,7 @@ function create_button(ingredient) {
 
     /* state is targeted first. First click makes it active THEN ads to list. Next click makes it unactive THEN removes. repeats*/
     newButton.addEventListener('click', () => {
-        if (newButton.closest('#add-queryBuilder')) {
+        if (newButton.closest('#add-queryBuilder') || newButton.closest('#landing-box')) {
             if (newButton.classList.contains('active')) {
                 if (banned_items.has(newButton.dataset.item)) {
                     banned_items.delete(newButton.dataset.item);
@@ -103,32 +103,32 @@ function create_button(ingredient) {
                 banned_items.add(newButton.dataset.item);
                 newButton.classList.add('active');
             }
-        } else if (newButton.closest('#landing-picklist')) {
-            if (newButton.classList.contains('active')) {
-                picked_items.delete(newButton.dataset.item);
-                newButton.classList.remove('active');
-            } else {
-                picked_items.add(newButton.dataset.item);
-                newButton.classList.add('active');
-            }
         } else {
-            console.log('Debug: Anamalous button click detected.', newButton.textContent);
+            console.log('Debug: Anomalous button click detected.', newButton.textContent);
         };
     })
     return newButton;
 }
 
-const landing_picklist = document.getElementById('landing-picklist')
+/* this occurs early */
+console.log("Debug: Adding first 5 elements to landing picklist");
+const add_picklist_object = document.createElement('div');
+add_picklist_object.classList.add('running-picklist');
+add_picklist_object.id = 'add-picklist';
 window.addEventListener("load", () => {
     console.log("Debug: Generating button items from ingredient list");
     ingredients.forEach(ingredient => {
         button_items.set(ingredient, create_button(ingredient));
     });
     console.log("Debug: Ingredient buttons created", button_items);
-    console.log("Debug: Adding first 5 elements to landing picklist");
+    
+    
+    document.getElementById('landing-box').appendChild(add_picklist_object);
+
+    const add_picklist = document.getElementById('add-picklist');
     for (const [ingredient, button] of button_items.entries()) {
-        if (landing_picklist.children.length < 5) {
-            landing_picklist.appendChild(button);
+        if (add_picklist.children.length < 5) {
+            add_picklist.appendChild(button);
         } else {
             break;
         }
@@ -142,8 +142,8 @@ search_buttons.forEach(button => {
     button.addEventListener('click', search)
 })
 
-/* keydown events separate for when the cursor is in a searchbar vs when the cursor is somewher else */
-const search_bars = document.querySelectorAll('.searchbar');
+/* keydown events separate for when the cursor is in a textbox vs when the cursor is somewher else */
+const search_bars = document.querySelectorAll('.input-textbox');
 search_bars.forEach(bar => {
     bar.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
@@ -232,12 +232,27 @@ function search(event) {
         running_box.style.display = "flex";
         console.log('\tDebug: Changing display type of objects - success');
         console.log('Debug: Attempting to populate picklists with buttons');
+
+        /* moves the add-picklist to the add-queryBuilder, simpler to work with the dynamic buttons */
+        document.getElementById('add-queryBuilder').appendChild(document.getElementById('add-picklist'));
         update_addpicklists();
         update_removepicklists();
     }
 }
 
 document.querySelector(".init-search", search);
+
+function add_searcheditem(item) {
+    console.log(`Debug: Adding searched item`, item);
+    picked_items.add(item);
+    update_addpicklists();
+}
+
+function remove_searcheditem(item) {
+    console.log(`Debug: Removing searched item`, item);
+    banned_items.add(item);
+    update_removepicklists();
+}
 
 /* Predictive text search */
 document.querySelectorAll(".input-textbox").forEach(textbox =>
@@ -256,8 +271,8 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
             return;
         }
         else {
-            let tabIndexCounter = 0;
-            if (textbox.closest("init-searchbar") || textbox.closest("add-searchbar")) {
+            const exclude = [];
+            if (textbox.closest("#init-searchbar") || textbox.closest("#add-searchbar")) {
                 /* if the textbox is in the add-queryBuilder, we want to exclude items that are already picked */
                 for (const item of picked_items) {
                     exclude.push(item);
@@ -268,7 +283,7 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
                     exclude.push(item);
                 }
             }
-            const exclude = [];
+            let tabIndexCounter = 0;
             for (const match of matches) {
                 if (exclude.includes(match)) {
                     continue;
@@ -280,16 +295,20 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
                 suggestions.appendChild(suggestion);
                 tabIndexCounter++;
                 
-                /* this defines a function we attach to each suggestion item allowing it to be tabbed to and selected */
-                const suggestion_item_action = () => {
+                /* this defines a function we attach to each suggestion item  */
+                var suggestion_item_action = "";
+                var suggestion_item_function = "";
+                if (textbox.closest("#init-searchbar") || textbox.closest("#add-searchbar")) {
+                    suggestion_item_function = add_searcheditem;
+                } else {
+                    suggestion_item_function = remove_searcheditem;
+                }
+                suggestion_item_action = () => {
                     textbox.value = match;
                     suggestions.style.display = "none";
-                    if (event.target.closest("init-searchbar") || event.target.closest("add-searchbar")) {
-                        add_searcheditem(match) /* will trigger updates of picklists and new query */
-                    } else {
-                        remove_searcheditem(match) /* will trigger updates of picklists and new query */
-                    }
+                    suggestion_item_function(match);
                 }
+                suggestion.addEventListener("click", suggestion_item_action);
             }
             suggestions.style.display = "block";
         }
