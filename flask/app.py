@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def wfd_home():
-    return render_template('WhatsForDinner.html', title="Whats for Dinner")
+    return render_template('WhatsForDinner.html', title="WhatsForDinner")
 
 @app.route('/team')
 def team():
