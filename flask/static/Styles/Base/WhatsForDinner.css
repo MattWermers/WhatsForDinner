@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-content;
+    width: 60vw;
 }
 
 #app-title{
@@ -36,6 +36,16 @@
 .landing-box #landing-picklist .p_button {
     background-color: #ffffff;
     width: fit-content;
+}
+
+.picklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .running-box {

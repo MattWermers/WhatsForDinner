@@ -110,25 +110,19 @@ function create_button(ingredient) {
     return newButton;
 }
 
-/* this occurs early */
-console.log("Debug: Adding first 5 elements to landing picklist");
-const add_picklist_object = document.createElement('div');
-add_picklist_object.classList.add('running-picklist');
-add_picklist_object.id = 'add-picklist';
+const add_picklist = document.getElementById('add-picklist');
 window.addEventListener("load", () => {
     console.log("Debug: Generating button items from ingredient list");
     ingredients.forEach(ingredient => {
         button_items.set(ingredient, create_button(ingredient));
     });
     console.log("Debug: Ingredient buttons created", button_items);
-    
-    
-    document.getElementById('landing-box').appendChild(add_picklist_object);
 
-    const add_picklist = document.getElementById('add-picklist');
+    const landing_picklist = document.getElementById('landing-picklist');
+    console.log("Debug: Adding first 5 elements to landing picklist");
     for (const [ingredient, button] of button_items.entries()) {
-        if (add_picklist.children.length < 5) {
-            add_picklist.appendChild(button);
+        if (landing_picklist.children.length < 5) {
+            landing_picklist.appendChild(button);
         } else {
             break;
         }
@@ -168,14 +162,15 @@ document.addEventListener('keydown', (event) => {
 function update_addpicklists() {
     console.log('\tDebug: Updating addpicklist');
     let i = 0; /* interesting way we have to declare here, still figuring out types i guess */
-    const add_picklist = document.getElementById('add-picklist');
     const remove_picklist = document.getElementById('remove-picklist');
+    const landing_picklist = document.getElementById('landing-picklist');
     /* iterate directly through the items and update i */
     for (const item of picked_items) {
         if (i >= 30) {
             break;
         }
         const new_button = button_items.get(item);
+        new_button.classList.add('active');
         add_picklist.appendChild(new_button);
         i++;
     }
@@ -183,7 +178,7 @@ function update_addpicklists() {
         if (i >= 30) {
             break;
         }
-        if (!picked_items.has(ingredient) && !banned_items.has(ingredient) && !remove_picklist.contains(button)) {
+        if (!picked_items.has(ingredient) && !banned_items.has(ingredient) && !remove_picklist.contains(button) && !landing_picklist.contains(button)) {
             add_picklist.appendChild(button);
             i++;
         }
@@ -191,11 +186,20 @@ function update_addpicklists() {
 
 }
 
+/* relavant here. observer will resize the add-picklist to match the width of the landing-picklist */
+/* turned on at page load, turned off when first query init */
+const observe_landing_picklist = new ResizeObserver(entries => {
+    for (let entry of entries) {
+        const landing_picklist_width = entry.contentRect.width;
+        add_picklist.style.width = `${landing_picklist_width}px`;
+    }
+});
+observe_landing_picklist.observe(document.getElementById('landing-picklist'));
+
 function update_removepicklists() {
     console.log('\tDebug: Updating removepicklist');
     let i = 0;
     const remove_picklist = document.getElementById('remove-picklist');
-    const add_picklist = document.getElementById('add-picklist');
     for (const item of banned_items) {
         if (i >= 30) {
             break;
@@ -234,7 +238,10 @@ function search(event) {
         console.log('Debug: Attempting to populate picklists with buttons');
 
         /* moves the add-picklist to the add-queryBuilder, simpler to work with the dynamic buttons */
-        document.getElementById('add-queryBuilder').appendChild(document.getElementById('add-picklist'));
+        document.getElementById('add-queryBuilder').appendChild(add_picklist);
+        observe_landing_picklist.unobserve(document.getElementById('landing-picklist')); /* stop observing the landing picklist */
+        add_picklist.style.display = "width: 100%;"; /* make the add-picklist take up the full width of the add-queryBuilder */
+        document.getElementById('landing-picklist').innerHTML = ""; /* clear the landing picklist so it does not have buttons that are now in the add-picklist */
         update_addpicklists();
         update_removepicklists();
     }

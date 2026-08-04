@@ -15,13 +15,14 @@
         <div class="suggestion-list" id="init-suggestions" style="display: none;"></div>
         <button class="query" id="init-search">&#8594;</button>
     </div>
+    <div id="landing-picklist"></div> <!-- this holds the buttons that are initially displayed. IT NEEDS to be deleted or emptied for subsequent searches -->
+    <div class="picklist" id="add-picklist"></div> <!-- this holds buttons that are added by search-->
 </div>
 
 <div class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
     <div class="left-side">
         <div id="add-queryBuilder">
             <p class="queryBuilder-header">Things I have:</p>
-            <div class="running-picklist" id="add-picklist"></div>
             <div class="searchbar" id="add-searchbar">
                 <input class="input-textbox" id="addingred-textbox" type="text" placeholder="search for an ingredient">
                 <div class="suggestion-list" id="add-suggestions" style="display: none;"></div>
@@ -29,7 +30,7 @@
         </div>
         <div id="remove-queryBuilder">
             <p class="queryBuilder-header">Things I avoid:</p>
-            <div class="running-picklist" id="remove-picklist"></div>
+            <div class="picklist" id="remove-picklist"></div>
             <div class="searchbar" id="remove-searchbar">
                 <input class="input-textbox" id="removeingred-textbox" type="text" placeholder="search for an ingredient">
             </div>
