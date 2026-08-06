@@ -196,11 +196,8 @@ def migrate_staging_to_production(conn):
 
 
 def run(conn=None, csv_path=None):
-    """Entry point matching the db_scripts/ convention (DESCRIPTION + run()).
-    NOTE: db_connectionHandler.run_script() currently calls script.run() with
-    no arguments, so it won't have access to self.conn as-is. Either pass a
-    connection through (e.g. run_script could call script_to_run.run(self.conn)),
-    or run this file standalone as shown below."""
+    """Entry point matching the db_scripts/ convention (DESCRIPTION + run(sqlite.connection , csv_path)).
+    NOTE: Must receive db connection and csv_source filepath from calling function"""
     own_connection = conn is None
     if own_connection:
         conn = sqlite3.connect(Path("../db/db_file.db"))
@@ -216,7 +213,7 @@ def run(conn=None, csv_path=None):
 
 if __name__ == "__main__":
     db_path = Path("../db/db_file.db")
-    csv_path = Path("../db/simple_meals_selected.csv")  # adjust to your actual filename
+    csv_path = Path("../db_source/source.csv")  # adjust to your actual filename
 
     connection = sqlite3.connect(db_path)
     if csv_path.is_file():

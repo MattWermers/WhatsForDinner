@@ -11,8 +11,7 @@ class db_connectionHandler:
         *** IF CALLED AS SUBSCRIPT PUT IN with()
         It can be initialized as a subscript or ran as main.
             * if running as main or through terminal __repr__ can be used to see loaded modules
-        It requires two named parameters for initialization: csv_source, db_file
-            - csv_source: a csv formatted file with headers
+        It requires one named parameter for initialization: db_file
             - db_file: an existing SQLite db file
                 If a db file does not exist at the given location
                 a new one is created
@@ -30,41 +29,46 @@ class db_connectionHandler:
                     USAGE: [how to use the module] <- ie list input params
                     \"\"\"
     """
-    def __init__(self, csv_source, db_file):
-        
-        self.csv_source = Path(csv_source)
+    def __init__(self, db_file):
+        # will add doc for this file routing
+        self.csv_source = Path(__file__).resolve().parent / "db_source" / "source.csv"
         self.db_file = Path(db_file)
-        self.script_folder = Path("db_scripts/")
-        self.init_db()
+        self.script_folder = Path(__file__).resolve().parent / "db_scripts"
         self.mod_list = {}
         self.modules = {}
-        self.conn = None
-        self.curr = None
         self.recently_init = 0
+        self.db_exists = False
 
     # These next two function allow the class to be used as a context manager with the "with" statement
     # They are constructors and destructors for the class, so the database connection is opened and closed
     # automatically when the class is used in a "with" statement.
     def __enter__(self):
+        self.db_exists = self.db_file.is_file()
+        self.db_file.parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.db_file)
         self.curr = self.conn.cursor()
+        self.init_db()
+        self._load_scripts()
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.conn.commit()
         self.conn.close()
 
-    # This is probably not necessart
+    # This is probably not necessary
     # Desctructor for the class if missed, cleaned up on garbage collection
     def __del__(self):
-        if hasattr(self , "conn"):
-            self.conn.close()
+        if hasattr(self , "conn") and self.conn:
+            try:
+                self.conn.close()
+            except Exception as e:
+                pass
 
     # Prints the content of the class, the loaded modules, and stats of its connection
     def __repr__(self):
         output = ""
-        output += f"CSV_source:     {csv_source}\n"
-        output += f"db_file:        {db_file}\n"
+        output += f"CSV_source:     {self.csv_source}\n"
+        output += f"db_file:        {self.db_file}\n"
         output += f"script_folder:  {self.script_folder} Exists{self.script_folder.is_file()}\n"
         output += f"Recently init:  {self.recently_init}\n"
         
@@ -74,15 +78,16 @@ class db_connectionHandler:
             output += f"{key}: {value}\n"
         
         # adds the schema of the database to the output
-        for schema in self.curr.fetchall():
-            output += schema[0] + "\n"
+        # for schema in self.curr.execute("SELECT sql FROM sqlite_schema WHERE sql NOT NULL"):
+        #     output += schema[0] + "\n"
+        output += "\n".join((row[0] for row in self.curr.execute("SELECT sql FROM sqlite_schema WHERE sql NOT NULL").fetchall()))
         return output
     
     # first checks if the database file exists, if not it creates it and initializes the tables
     # if the database file exists, it checks if the source CSV has been updated since the more recently than the database
     # if we decide to do so we can also update the csv instead here
     def init_db(self):
-        if not self.db_file.is_file() or (self.csv_source.stat().st_mtime > self.db_file.stat().st_mtime):
+        if not self.db_exists or (self.csv_source.stat().st_mtime > self.db_file.stat().st_mtime):
             self.db_file.parent.mkdir(parents=True, exist_ok=True)
             self.db_file.touch()
             self._init_tables()
@@ -105,24 +110,22 @@ class db_connectionHandler:
               spec = importlib.util.spec_from_file_location(mod_name, file_path)
               module = importlib.util.module_from_spec(spec)
               spec.loader.exec_module(module)
-              self.modules[mod_name] = [module]
+              self.modules[mod_name] = module
               self.mod_list[mod_name] = getattr(module, 'DESCRIPTION', 'No script description.')
 
     # calls the scripts from above, if the script is found it will run the script and return 1, if not it will return 0
-    def run_script(self , mod):
+    def run_script(self , mod, *args, **kwargs):
         script_to_run = self.modules.get(mod)
         if script_to_run:
             try:
-                script_to_run.run()
-                return 1
-            except:
-                return 0
-        return 0
+                return script_to_run.run(self.conn, *args, **kwargs)
+            except Exception as e:
+                print(f"Error occurred while running script '{mod}': {e}")
+                return None
+        return None
     
     # database creation, pretty straight forward
     def _init_tables(self):
-        self.conn = sqlite3.connect(self.db_file)
-        self.curr = self.conn.cursor()
         self.curr.execute(
             '''
             CREATE TABLE table_recipes (
@@ -188,10 +191,13 @@ class db_connectionHandler:
 
         self.conn.commit()
     
-# for when running the script directly, it will initialize the database and print the contents of the class
 if __name__=="__main__":
-    csv_source = '../db/source.csv'
-    db_file = '../db/db_file.db'
-    debug = input("would you like to debug? ")
-    with db_connectionHandler(csv_source,db_file) as db:
-        print(repr(db))
+    # will add doc for this file routing
+    db_file = Path(__file__).resolve().parent / "db" / "db_file.db"
+    debug = input("would you like to debug? (y/n)")
+    with db_connectionHandler(db_file) as db:
+        print("Populating database...")
+        db.run_script("populate_db", db.csv_source)
+        print("Database populated!")
+        if debug == "y":
+            print(repr(db))

@@ -15,11 +15,13 @@
         <div class="suggestion-list" id="init-suggestions" style="display: none;"></div>
         <button class="query" id="init-search">&#8594;</button>
     </div>
-    <div id="landing-picklist"></div> <!-- this holds the buttons that are initially displayed. IT NEEDS to be deleted or emptied for subsequent searches -->
+    <div id="landing-picklist"></div>
+    <!-- this holds the buttons that are initially displayed. IT NEEDS to be deleted or emptied for subsequent searches -->
     <div class="picklist" id="add-picklist"></div> <!-- this holds buttons that are added by search-->
 </div>
 
-<div class="running-box" id="running-box" style="display: none;"> <!--Toggle this when init query is shown. Make landing-box hidden-->
+<div class="running-box" id="running-box" style="display: none;">
+    <!--Toggle this when init query is shown. Make landing-box hidden-->
     <div class="left-side">
         <div id="add-queryBuilder">
             <p class="queryBuilder-header">Things I have:</p>
@@ -32,21 +34,24 @@
             <p class="queryBuilder-header">Things I avoid:</p>
             <div class="picklist" id="remove-picklist"></div>
             <div class="searchbar" id="remove-searchbar">
-                <input class="input-textbox" id="removeingred-textbox" type="text" placeholder="search for an ingredient">
+                <input class="input-textbox" id="removeingred-textbox" type="text"
+                    placeholder="search for an ingredient">
             </div>
         </div>
         <div class="spacer"></div>
         <button class="p_button" id="random-button">decide for me</button>
     </div>
     <div class="right-side">
-        
+
         <div class="display-holder" id="imgrec">
-            <div class="imgrec-img" id="imgrec-img"><img src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
+            <div class="imgrec-img" id="imgrec-img"><img
+                    src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
             <div class="imgrec-details" id="imgrec-details">
                 <div id="imgrec-title">French Fries</div>
                 <div id="imgrec-prepInfo">
                     <p id="imgrec-prepInfo-time">Time: <span id="imgrec-header-prepInfo-time"></span></p>
-                    <p id="imgrec-prepInfo-ingCount">Ingredient Count: <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                    <p id="imgrec-prepInfo-ingCount">Ingredient Count:
+                        <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
                     <div id="imgrec-steps">
                         <ol>
                             <li>uno</li>
@@ -54,6 +59,7 @@
                             <li>tres</li>
                         </ol>
                     </div>
+                    <div id="imgrec-description"></div>
                 </div>
             </div>
         </div>
