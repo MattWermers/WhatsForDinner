@@ -6,9 +6,9 @@ This is Team 6's project repository for CSPB 3308 at CU Boulder in Summer 2026.
 
 |Team Member|Role|Github Username|CU Email|Gmail|
 |---|---|---|---|---|
-|Zeke B|Scrum Master|ZekeBuckholz|Zeke.Buckholz@colorado.edu|zekebuckholz@gmail.com|
+|Zeke B|Developer, Scrum Master 1|ZekeBuckholz|Zeke.Buckholz@colorado.edu|zekebuckholz@gmail.com|
 |Matt W |Developer|MattWermers|Matthew.Wermers@colorado.edu|matthew.wermers@gmail.com|
-|Cameron W|Developer|cwestbro|Cameron.Westbrook@colorado.edu|cameronwestbrook12@gmail.com|
+|Cameron W|Developer, Scrum Master 2|cwestbro|Cameron.Westbrook@colorado.edu|cameronwestbrook12@gmail.com|
 |Jimmy T|Developer|jimmyytthomas|Jimmy.Thomas@colorado.edu|jamesgthomas7@gmail.com|
 
 ## Link to Dataset
