@@ -13,3 +13,6 @@ This is Team 6's project repository for CSPB 3308 at CU Boulder in Summer 2026.
 
 ## Link to Dataset
 https://recipenlg.cs.put.poznan.pl/
+
+## Link to Demo Presentation Video
+https://drive.google.com/file/d/1BR7GKygsFAPhp7PxoWRObC_b4dEY5r31/view?usp=sharing 
