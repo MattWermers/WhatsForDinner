@@ -188,7 +188,8 @@
     background: #900;
 }
 
-.suggestion-item:focus {
+.suggestion-item:focus,
+.suggestion-item.highlighted {
     background: #e0e0ff;
     outline: none;
 }

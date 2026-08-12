@@ -138,19 +138,68 @@ search_buttons.forEach(button => {
 })
 
 /* keydown events separate for when the cursor is in a textbox vs when the cursor is somewher else */
-const search_bars = document.querySelectorAll('.input-textbox');
-search_bars.forEach(bar => {
-    bar.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            console.log("\tDebug: Enter pressed while cursor inside searchbar");
-            /* this function makes it so that if the user is in the searchbar they search ingredients and dont intitiate a new search */
-            /* it does so with the folliwng stopPropogation */
-            /* this makes it so that when that user is in the searchbar it does not trigger the even below */
-            event.stopPropagation();
+function updateSuggestionHighlight(bar, suggestionsContainer, index) {
+    const items = suggestionsContainer.querySelectorAll('.suggestion-item');
+    items.forEach((item, idx) => {
+        if (idx === index) {
+            item.classList.add('highlighted');
+            item.scrollIntoView({ block: 'nearest' });
+        } else {
+            item.classList.remove('highlighted');
         }
     });
-})
+}
+
+const search_bars = document.querySelectorAll('.input-textbox');
+search_bars.forEach(bar => {
+    bar._highlightedIndex = 0;
+    bar.addEventListener('keydown', (event) => {
+        const suggestions = bar.closest('.searchbar').querySelector('.suggestion-list');
+        const isSuggestionsVisible = suggestions && suggestions.style.display !== 'none';
+        const items = suggestions ? suggestions.querySelectorAll('.suggestion-item') : [];
+
+        if (isSuggestionsVisible && items.length > 0) {
+            if (event.key === 'Tab') {
+                event.preventDefault();
+                let newIndex = bar._highlightedIndex + (event.shiftKey ? -1 : 1);
+                if (newIndex < 0) {
+                    newIndex = items.length - 1;
+                } else if (newIndex >= items.length) {
+                    newIndex = 0;
+                }
+                bar._highlightedIndex = newIndex;
+                updateSuggestionHighlight(bar, suggestions, newIndex);
+            } else if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                let newIndex = bar._highlightedIndex + 1;
+                if (newIndex >= items.length) newIndex = 0;
+                bar._highlightedIndex = newIndex;
+                updateSuggestionHighlight(bar, suggestions, newIndex);
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                let newIndex = bar._highlightedIndex - 1;
+                if (newIndex < 0) newIndex = items.length - 1;
+                bar._highlightedIndex = newIndex;
+                updateSuggestionHighlight(bar, suggestions, newIndex);
+            } else if (event.key === 'Enter') {
+                event.preventDefault();
+                event.stopPropagation();
+                const highlightedItem = items[bar._highlightedIndex];
+                if (highlightedItem) {
+                    highlightedItem.click();
+                }
+            } else if (event.key === 'Escape') {
+                suggestions.style.display = 'none';
+            }
+        } else {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                console.log("\tDebug: Enter pressed while cursor inside searchbar");
+                event.stopPropagation();
+            }
+        }
+    });
+});
 /* this is for when the curor is not in a searchbar */
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
@@ -355,6 +404,7 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
 
         if (!query) {
             suggestions.style.display = "none";
+            return;
         }
 
         const matches = ingredients.filter(ingredient => ingredient.toLowerCase().includes(query));
@@ -375,7 +425,7 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
                     exclude.push(item);
                 }
             }
-            let tabIndexCounter = 0;
+            let appendedCount = 0;
             for (const match of matches) {
                 if (exclude.includes(match)) {
                     continue;
@@ -383,9 +433,16 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
                 const suggestion = document.createElement("div");
                 suggestion.className = 'suggestion-item';
                 suggestion.textContent = match;
-                suggestion.tabIndex = tabIndexCounter;
+                suggestion.tabIndex = -1; // Managed programmatically
                 suggestions.appendChild(suggestion);
-                tabIndexCounter++;
+                appendedCount++;
+
+                /* Sync hover state with keyboard navigation */
+                let currentIndex = appendedCount - 1;
+                suggestion.addEventListener("mouseenter", () => {
+                    textbox._highlightedIndex = currentIndex;
+                    updateSuggestionHighlight(textbox, suggestions, currentIndex);
+                });
 
                 /* this defines a function we attach to each suggestion item  */
                 var suggestion_item_action = "";
@@ -396,13 +453,20 @@ document.querySelectorAll(".input-textbox").forEach(textbox =>
                     suggestion_item_function = remove_searcheditem;
                 }
                 suggestion_item_action = () => {
-                    textbox.value = match;
+                    textbox.value = "";
                     suggestions.style.display = "none";
                     suggestion_item_function(match);
                 }
                 suggestion.addEventListener("click", suggestion_item_action);
             }
-            suggestions.style.display = "block";
+            
+            if (appendedCount > 0) {
+                suggestions.style.display = "block";
+                textbox._highlightedIndex = 0;
+                updateSuggestionHighlight(textbox, suggestions, 0);
+            } else {
+                suggestions.style.display = "none";
+            }
         }
     }
     ));
