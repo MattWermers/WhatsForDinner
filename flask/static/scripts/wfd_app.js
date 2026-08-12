@@ -60,11 +60,12 @@ const ingredients = [
     "Breadcrumbs",
     "Tofu"
 ];
-console.log("WFD: Version .8");
+console.log("WFD: Version 1.0");
 
 /* These get used a frequently(called a lot) so make them global instead of generate them when the function is invoked */
 const landing_box = document.getElementById("landing-box");
 const running_box = document.getElementById("running-box");
+const add_picklist = document.getElementById('add-picklist');
 
 const picked_items = new Set();
 const banned_items = new Set();
@@ -111,7 +112,6 @@ function create_button(ingredient) {
     return newButton;
 }
 
-const add_picklist = document.getElementById('add-picklist');
 window.addEventListener("load", () => {
     console.log("Debug: Generating button items from ingredient list");
     ingredients.forEach(ingredient => {
@@ -162,9 +162,11 @@ document.addEventListener('keydown', (event) => {
 
 function update_addpicklists() {
     console.log('\tDebug: Updating addpicklist');
+    // add_picklist.innerHTML = '';
     let i = 0; /* interesting way we have to declare here, still figuring out types i guess */
     const remove_picklist = document.getElementById('remove-picklist');
     const landing_picklist = document.getElementById('landing-picklist');
+    add_picklist.innerHTML = "";
     /* iterate directly through the items and update i */
     for (const item of picked_items) {
         if (i >= 30) {
@@ -172,7 +174,11 @@ function update_addpicklists() {
         }
         const new_button = button_items.get(item);
         new_button.classList.add('active');
-        add_picklist.appendChild(new_button);
+        if (landing_box.querySelector('button[data-item="' + item + '"]') !== null) {
+            console.log("Debug: Button " + item + " is in the landing picklist");
+        } else {
+            add_picklist.appendChild(new_button);
+        }
         i++;
     }
     for (const [ingredient, button] of button_items.entries()) {
@@ -180,7 +186,7 @@ function update_addpicklists() {
             break;
         }
         if (!picked_items.has(ingredient) && !banned_items.has(ingredient) && !remove_picklist.contains(button) && !landing_picklist.contains(button)) {
-            add_picklist.appendChild(button);
+            add_picklist.append(button);
             i++;
         }
     }
@@ -312,8 +318,8 @@ async function search(event) {
         /* moves the add-picklist to the add-queryBuilder, simpler to work with the dynamic buttons */
         document.getElementById('add-queryBuilder').appendChild(add_picklist);
         observe_landing_picklist.unobserve(document.getElementById('landing-picklist')); /* stop observing the landing picklist */
-        add_picklist.style.display = "width: 100%;"; /* make the add-picklist take up the full width of the add-queryBuilder */
-        document.getElementById('landing-picklist').innerHTML = ""; /* clear the landing picklist so it does not have buttons that are now in the add-picklist */
+        add_picklist.style.width = "100%"; /* make the add-picklist take up the full width of the add-queryBuilder */
+        document.getElementById('landing-picklist').innerHTML = ""; /* CRITICAL clear the landing picklist so it does not have buttons that are now in the add-picklist */
         update_addpicklists();
         update_removepicklists();
     }
@@ -406,5 +412,20 @@ document.addEventListener("click", (event) => {
         document.querySelectorAll(".suggestion-list").forEach(suggestions => {
             suggestions.style.display = "none";
         });
+    }
+});
+
+// Random button
+document.getElementById("random-button").addEventListener("click", () => {
+    if (g_recipes.length === 0) {
+        document.getElementById("random-button").innerText = "Please enter ingredients"
+        setTimeout(() => {
+            document.getElementById("random-button").innerText = "decide for me"
+        }, 1000);
+        return;
+    } else {
+        const random_idx = Math.floor(Math.random() * g_recipes.length);
+        g_index = random_idx;
+        update_displayHolder();
     }
 });

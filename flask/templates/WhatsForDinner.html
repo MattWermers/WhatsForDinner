@@ -44,14 +44,22 @@
     <div class="right-side">
 
         <div class="display-holder" id="imgrec">
-            <div class="imgrec-img" id="imgrec-img"><img
-                    src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries"></div>
+            <div class="imgrec-img" id="imgrec-img">
+                <div class="imgrec-img-wrapper">
+                    <img src="{{ url_for('static', filename='Styles/test_img/images.jpg') }}" alt="french fries">
+                    <div id="imgrec-arrows-holder">
+                        <button id="arrow-left">&#2190;</button>
+                        <button id="arrow-right">&#8594;</button>
+                    </div>
+                </div>
+            </div>
             <div class="imgrec-details" id="imgrec-details">
                 <div id="imgrec-title">French Fries</div>
                 <div id="imgrec-prepInfo">
                     <p id="imgrec-prepInfo-time">Time: <span id="imgrec-header-prepInfo-time"></span></p>
                     <p id="imgrec-prepInfo-ingCount">Ingredient Count:
-                        <spanid="imgrec-header-prepInfo-ingredient-count"></span></p>
+                        <spanid="imgrec-header-prepInfo-ingredient-count"></span>
+                    </p>
                     <div id="imgrec-steps">
                         <ol>
                             <li>uno</li>
@@ -62,10 +70,6 @@
                     <div id="imgrec-description"></div>
                 </div>
             </div>
-        </div>
-        <div id="imgrec-arrows-holder">
-            <button id="arrow-left">&#2190;</button>
-            <button id="arrow-right">&#8594;</button>
         </div>
         <div class="display-holder" id="listrec" style="display: none;">
             <ul id="listrec-list">
