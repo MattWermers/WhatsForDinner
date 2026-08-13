@@ -16,3 +16,9 @@ https://recipenlg.cs.put.poznan.pl/
 
 ## Link to Demo Presentation Video
 https://drive.google.com/file/d/1BR7GKygsFAPhp7PxoWRObC_b4dEY5r31/view?usp=sharing 
+
+## Link to Customer Demo Video
+https://drive.google.com/file/d/1cccwvzqSKmooji9MD-ymSw2Oyx-z9Q-e/view?usp=sharing
+
+## Link to Site
+https://https://mattwermers.me/
