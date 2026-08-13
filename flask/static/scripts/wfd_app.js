@@ -60,7 +60,7 @@ const ingredients = [
     "Breadcrumbs",
     "Tofu"
 ];
-console.log("WFD: Version 1.0");
+console.log("WFD: Version 1.1");
 
 /* These get used a frequently(called a lot) so make them global instead of generate them when the function is invoked */
 const landing_box = document.getElementById("landing-box");
