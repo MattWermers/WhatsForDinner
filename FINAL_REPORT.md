@@ -17,7 +17,7 @@ WhatsForDinner
 - Project tracker (instructor can access): [Trello Board](https://trello.com/invite/b/6a30b02f9664f0fdedf05352/ATTIf1f6a87882645f7393bd5a92c95331b6FC048ACE/3308-team-6)
 - Version control repository (instructors have access): [GitHub Repo](https://github.com/MattWermers/WhatsForDinner)
 - 5-minute customer demo video: [Demo Video](https://drive.google.com/file/d/1cccwvzqSKmooji9MD-ymSw2Oyx-z9Q-e/view?usp=sharing)
-- Public deployment site: https://mattwermers.me/
+- Public deployment site: https://mattwermers.me/wfd/
 
 ## Repository Readiness
 
